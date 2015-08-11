@@ -17,9 +17,7 @@ $.get("_head.html", function (data) {
 
 });
 
-$.get("template.html", function () {
-    $("template").html(data);
-});
+
 
 
   var _gaq = _gaq || [];

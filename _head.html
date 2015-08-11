@@ -1,4 +1,172 @@
-﻿<!-- Latest compiled and minified CSS -->
+﻿<style>
+    /* CSS Document */
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800";
+/* @import "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700"; */
+
+
+*, html { margin:0 auto; }
+
+body { background:#fff !important; font-family: 'Open Sans', Verdana, Geneva, sans-serif !important; }
+
+
+/* video responsivo */
+.video-responsive {
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+.centralizador { max-width:820px; overflow:hidden; }
+
+h2 { font-size:29px !important; font-weight:700 !important; color:#1d1868 !important; text-transform:uppercase !important; }
+h3 { font-size:24px !important; font-weight:700 !important; color:#1d1868 !important; text-transform:uppercase !important; }
+
+
+
+
+/* topo */
+header { overflow:hidden; }
+.topo { height:276px; margin-top:98px; }
+
+.menu { position:fixed; z-index:1000; width:100%; background:#fff; 
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+
+.botao_menu { margin-top:27px; }
+.botao_menu .texto { font-size:29px; margin-top:2px; margin-right:10px; }
+.botao_menu .glyphicon-menu-hamburger { font-size:43px;  }
+.botao_menu a { color:#1d1868; }
+.botao_menu a .glyphicon-menu-hamburger { color:#2e3192; }
+.video_inicio { height:702px; margin-top:98px; background:url(imagens/video_fundo.jpg) top center no-repeat;  }
+.video_inicio .modal-content { background:#000; }
+.video_inicio .modal-footer { border-top:none; }
+.video_texto { padding-top:220px; }
+
+/* correção do bug do modal afastando o menu (fixed) pra direita */
+.modal-open {
+    padding-right:0 !important;
+	overflow:visible !important;
+}
+
+
+
+.botao_menu .dropdown-menu {
+	max-width:100%;
+	width:650px;
+	min-width:42%;
+	position:fixed;
+	top:0;
+	margin:0;
+	background:#363636;
+	border:none;
+	border-radius:0 !important;
+	color:#ffd105;
+	padding:45px 60px;
+	text-transform:uppercase;
+	font-size:20px;
+	font-weight:700;
+}
+.botao_menu .dropdown-menu a { color:#ffd105; padding: 3px 0px; white-space: normal; }
+.botao_menu .dropdown-menu a:hover { color:#fff; background:none; font-weight:700; }
+.botao_menu .dropdown-menu li { max-width:410px; margin-left: 0 !important; }
+.botao_menu .dropdown-menu li.divider { margin:17px auto; background-color:#ffd105; }
+.botao_menu .dropdown-menu .fechar { position:absolute; top:10px; left:10px; z-index:1001; color:#fff; }
+.botao_menu .dropdown-menu .glyphicon-remove { font-size:24px; }
+
+.botao_menu .dropdown-menu .menu_busca { border:1px solid #ffd105; border-radius:10px; padding:4px 8px; overflow:hidden; }
+.botao_menu .dropdown-menu .menu_busca input { background:none; border:none; font-size:21px; font-weight:300; text-transform:uppercase; }
+.botao_menu .dropdown-menu .menu_busca .busca { width:80%; color:#ffd105; }
+::-webkit-input-placeholder {
+   color: #ffd105;
+}
+
+:-moz-placeholder {
+   color: #ffd105;
+}
+
+::-moz-placeholder {
+   color: #ffd105;  
+}
+
+:-ms-input-placeholder {  
+   color: #ffd105;  
+}
+.botao_menu .dropdown-menu .menu_busca .enviar { background:none; border:none;  }
+.botao_menu .dropdown-menu .menu_busca .glyphicon-search { font-size:24px; }
+
+
+
+
+/* o brt */
+#o_brt { background:#ffd105; overflow:hidden; padding:10px 0 20px; } 
+#o_brt .row > div { margin-bottom: 20px; }
+#o_brt p { font-size:12px; color:#1d1868; text-align:justify; }
+
+
+
+/* noticias - home */
+#noticias { background:#fff; padding:50px 0 70px; }
+#noticias a { color:#1d1868; }
+#noticias .item { margin:15px auto; }
+#noticias .noticia { max-width:460px; margin:15px auto; background:#fcedaa; }
+#noticias .noticia p { padding:10px; color:#000 !important; }
+
+
+/* notícias - pagina */
+.noticias { background:url(imagens/noticias_topo.jpg) top center no-repeat; }
+
+
+
+/* linha do tempo - timeline */
+#timeline { background:#ffd105; overflow:hidden; padding:20px 0 100px; } 
+#timeline h2 { background:url(imagens/ico_timeline.png) top left no-repeat; padding-left:80px; padding-top:17px; padding-bottom:20px; font-size:35px !important; }
+#timeline .item { height:365px; }
+#timeline .item img { border-radius: 50%; position:absolute; top:60%; }
+#timeline .item p { color:#1d1868; font-size:15px; }
+#timeline .leiamais { position:absolute; top:40%; }
+.leiamais { margin:15px auto; }
+.leiamais a { border:2px solid #1d1868; color:#1d1868; padding:2px 25px 2px 10px; text-transform:uppercase; font-size:14px; }
+.leiamais a:hover { text-decoration:none; background:#1d1868; color:#fff; }
+
+#timeline .linha { height:5px; background:#1d1868; }
+#timeline .marcador { border-radius: 50%; position:absolute; top:97.3%; left:45%; width:24px; height:24px; background:#1d1868; border:3px solid #fff; }
+
+
+
+.conteudo { background:#ffd105; overflow:hidden; padding:30px 0 30px; }
+.conteudo p { font-size:14px; color:#1d1868; text-align:justify; margin:20px auto; }
+.conteudo .row h2 { text-transform:none !important; padding-right:10%; letter-spacing:-1px; margin:40px auto 15px; /* font-family: 'Open Sans Condensed', sans-serif; */ }
+.conteudo .row img { margin:10px auto; }
+
+
+
+
+
+/* rodape */
+footer { background:url(imagens/rodape_fundo.jpg) top center no-repeat; height:207px; }
+footer .redes { text-align:center; }
+
+/* rotativo */
+.carousel-caption { width:100% !important; right:0px !important; left:0px !important; margin:0; background-color:rgba(0, 0, 0, 0.5); }
+
+
+/* compartilhamento */
+.compartilhamento {
+  text-align: center;
+}
+
+.compartilhamento a {   margin: auto 5px; }
+</style>
+<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 <!-- Optional theme -->

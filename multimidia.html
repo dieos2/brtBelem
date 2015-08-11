@@ -74,16 +74,16 @@
                     <ul class="dropdown-menu">
                     	<a data-target="#" href="" data-toggle="dropdown" class="dropdown-toggle fechar"><span class="glyphicon glyphicon-remove pull-right" aria-hidden="true"></span></a>
                     	
-                        <li><a href="#">Início</a></li>
+                        <li><a href="index.html">Início</a></li>
                         <li><a href="#">Tecnologia BRT</a></li>
                         <li><a href="#">cenário atual</a></li>
                         <li><a href="#">cenário belém 400 anos</a></li>
                         <li><a href="#">aspectos operacionais dos serviços</a></li>
                         <li class="divider"></li>
-                        <li><a href="#">notícias</a></li>
+                        <li><a href="noticia.html">notícias</a></li>
                         <li><a href="#">linha do tempo</a></li>
                         <li><a href="#">documentos</a></li>
-                        <li class="active"><a href="#">multimídia</a></li>
+                        <li class="active"><a href="multimidia.html">multimídia</a></li>
                         <br />
                         
                         <li class="menu_busca">
@@ -143,7 +143,7 @@
                     </a>
                     
                     <!-- Modal -->
-                      <div class="modal fade midia0" id="myModal" role="dialog" tabindex="-1">
+                      <div class="modal fade midia0" rel="midia0" id="myModal" role="dialog" tabindex="-1">
                         <div class="modal-dialog modal-lg">
                         
                           <!-- Modal content-->
@@ -410,7 +410,7 @@
                     </a>
                     
                     <!-- Modal -->
-                      <div class="modal fade midia7" id="myModal" role="dialog" tabindex="-1">
+                      <div class="modal fade midia7" id="myModal" rel="midia7" role="dialog" tabindex="-1">
                         <div class="modal-dialog modal-lg">
                         
                           <!-- Modal content-->
@@ -435,7 +435,24 @@
             
             <!-- reseta o src do iframe de dentro do modal #myModal ao fechar parando o vídeo -->
                   <script type="text/javascript">
-						$('.midia0').on('hidden.bs.modal', function () {
+				  
+				  		/*
+				  		var currentModal = '';
+		  
+				  		$('#myModal').on('show.bs.modal', function () {
+							
+							alert("entrou");
+							
+							$myModal = $(this);
+						
+							currentModal = $myModal.attr("rel");
+							
+							alert(currentModal);
+						
+						});
+						*/
+						
+						$('.modal').on('hidden.bs.modal', function () {
 					
 							$iframe = $(this).find( "iframe" );
 							
