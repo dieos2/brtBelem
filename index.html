@@ -4,19 +4,32 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>BRT - Belém</title>
 
-    <style id="template">
-       
+    <style type="text/css">
+        @import "template.css";
     </style>
+    <link rel="SHORTCUT ICON" href="http://agenciabelem.com.br/especial/imagens/favicon.png" type="image/x-icon" />
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <link href="css/smoothness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
 
 
+   
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 
-<script type='text/javascript' src='http://code.jquery.com/jquery-2.1.4.min.js'></script>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
 
-<script src="Scripts/script.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="Scripts/jsrender.min.js"></script>
+    <script src="Scripts/App/busca.js"></script>
 
-
-
-
+    <script src="Scripts/jquery-ui-1.10.4.min.js"></script>
+    <script src="Scripts/jquery.mask.min.js"></script>
+    <script src="Scripts/jquery.ui.datepicker.js"></script>
+    <script src="Scripts/jquery.simplePagination.js"></script>
+   
+ 
 </head>
 
 <body>
@@ -87,152 +100,20 @@
     
     <!-- noticias - in -->
     <div id="noticias">
-    
-    	<div class="container">
-        
-        	<h2>NOTÍCIAS</h2>
-            
-            <div class="row">
-            	
-                <div class="col-sm-4 col-xs-12 ">
-                	
-                    <a href="http://agenciabelem.com.br/noticias/detalhes/113704" target="_blank">
-                    <div class="noticia">
-                    <img src="http://agenciabelem.com.br/especial/imagens/noticia1.jpg" class="img-responsive" />
-                    
-                    <p style="color:#104461;">Plantio de árvores na Augusto Montenegro 
-marca a nova etapa de obras do BRT. [+]</p>
-					</div>
-                    </a>
-                    
-                </div>
-                
-                <div class="col-sm-4 col-xs-12 ">
-                	
-                    <a href="http://agenciabelem.com.br/noticias/detalhes/114624" target="_blank">
-                    <div class="noticia">
-                    <img src="http://agenciabelem.com.br/especial/imagens/noticia2.jpg" class="img-responsive" />
-                    
-                    <p  style="color:#104461;">Semob fará visitas técnicas regulares ao canteiro de obras do BRT Belém. [+]</p>
-                    </div>
-                    </a>
-                    
-                </div>
-                
-                <div class="col-sm-4 col-xs-12 ">
-                	
-                    <a href="http://agenciabelem.com.br/noticias/detalhes/113306" target="_blank">
-                    <div class="noticia">
-                    <img src="http://agenciabelem.com.br/especial/imagens/noticia3.jpg" class="img-responsive" />
-                    
-                    <p style="color:#104461;">Zenaldo acompanha de perto as obras da segunda etapa do BRT Belém. [+]</p>
-                    </div>
-                    </a>
-                    
-                </div>
-                
-			</div>
-            
-            
-            
-            <div class="row">
-                
-                <div class="col-sm-4 col-xs-12 ">
-                	
-                    <a href="http://agenciabelem.com.br/noticias/detalhes/113282" target="_blank">
-                    <div class="noticia">
-                    <img src="http://agenciabelem.com.br/especial/imagens/noticia4.jpg" class="img-responsive" />
-                    
-                    <p style="color:#104461;">Prefeitura inicia construção de terminal de integração e sistema de drenagem do BRT. [+]</p>
-                    </div>
-                    </a>
-                    
-                </div>
-                
-                <div class="col-sm-4 col-xs-12 ">
-                	
-                    <a href="http://agenciabelem.com.br/noticias/detalhes/113306" target="_blank">
-                    <div class="noticia">
-                    <img src="http://agenciabelem.com.br/especial/imagens/noticia3.jpg" class="img-responsive" />
-                    
-                    <p style="color:#104461;">Zenaldo acompanha de perto as obras da segunda etapa do BRT Belém. [+]</p>
-                    </div>
-                    </a>
-                    
-                </div>
-                
-                <div class="col-sm-4 col-xs-12 ">
-                	
-                    <a href="http://agenciabelem.com.br/noticias/detalhes/113282" target="_blank">
-                    <div class="noticia">
-                    <img src="http://agenciabelem.com.br/especial/imagens/noticia4.jpg" class="img-responsive" />
-                    
-                    <p style="color:#104461;">Prefeitura inicia construção de terminal de integração e sistema de drenagem do BRT. [+]</p>
-                    </div>
-                    </a>
-                    
-                </div>
-                
-			</div>
+        <div class="container">
 
-                
-            	<!--
-            	<div class="col-sm-3 col-xs-12">
-                	<div class="item">
-	                	<img src="imagens/thumb_noticia.jpg" class="img-responsive" />
-                    </div>
-                </div>
-                
+            <h2>NOTÍCIAS</h2>
 
-				<div class="col-sm-3 col-xs-12">
-                	<div class="item">
-	                	<img src="imagens/thumb_noticia.jpg" class="img-responsive" />
-                    </div>
-                </div>
-                
-                
-                <div class="col-sm-3 col-xs-12">
-                	<div class="item">
-	                	<img src="imagens/thumb_noticia.jpg" class="img-responsive" />
-                    </div>
-                </div>
-                
+            <div id="corpoNoticias" class="row">
 
-				<div class="col-sm-3 col-xs-12">
-                	<div class="item">
-	                	<img src="imagens/thumb_noticia.jpg" class="img-responsive" />
-                    </div>
-                </div>
-                
-                
-                <div class="col-sm-3 col-xs-12">
-                	<div class="item">
-	                	<img src="imagens/thumb_noticia.jpg" class="img-responsive" />
-                    </div>
-                </div>
-                
 
-				<div class="col-sm-3 col-xs-12">
-                	<div class="item">
-	                	<img src="imagens/thumb_noticia.jpg" class="img-responsive" />
-                    </div>
-                </div>
-                
-                
-                <div class="col-sm-3 col-xs-12">
-                	<div class="item">
-	                	<img src="imagens/thumb_noticia.jpg" class="img-responsive" />
-                    </div>
-                </div>
-                
 
-				<div class="col-sm-3 col-xs-12">
-                	<div class="item">
-	                	<img src="imagens/thumb_noticia.jpg" class="img-responsive" />
-                    </div>
-                </div>
-                -->
+
             </div>
+
+
+        </div>
+    
         
         </div>
     	
@@ -267,3 +148,27 @@ marca a nova etapa de obras do BRT. [+]</p>
 
 </body>
 </html>
+<script type="text/html" id="template">
+
+    <div class="col-sm-4 col-xs-12 ">
+
+        <a href="http://agenciabelem.com.br/noticias/detalhes/113704" target="_blank">
+            <div class="noticia">
+                <img src="http://agenciabelem.com.br/especial/imagens/noticia1.jpg" class="img-responsive" />
+
+                <p style="color:#104461;">
+                    Plantio de árvores na Augusto Montenegro
+                    marca a nova etapa de obras do BRT. [+]
+                </p>
+            </div>
+        </a>
+
+    </div>
+
+</script>
+<script>
+
+    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/1?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=6&page=1&status=4', "template", "corpoNoticias"); })
+</script>
+
+<script src="Scripts/script.js"></script>

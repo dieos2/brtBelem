@@ -1,4 +1,7 @@
-﻿
+﻿$.get("_head.html", function (data) {
+    $("head").append(data);
+
+});
 $.get("_menu.html", function (data) {
     $("#menu").html(data);
 
@@ -12,12 +15,6 @@ $.get("_timeline.html", function (data) {
     $("#timeline").html(data);
 
 });
-$.get("_head.html", function (data) {
-    $("head").append(data);
-
-});
-
-
 
 
   var _gaq = _gaq || [];
@@ -35,4 +32,6 @@ _gaq.push(['_trackPageview']);
     /* ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js'; */
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
+
+
 
