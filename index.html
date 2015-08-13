@@ -152,13 +152,12 @@
 
     <div class="col-sm-4 col-xs-12 ">
 
-        <a href="http://agenciabelem.com.br/noticias/detalhes/113704" target="_blank">
-            <div class="noticia">
-                <img src="http://agenciabelem.com.br/especial/imagens/noticia1.jpg" class="img-responsive" />
+        <a href="noticia.html?id={{:id_versao}}" target="_blank">
+            <div class="noticia" style="min-height:299px">
+                <img src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}&maxHeight=240&maxWidth=360" class="img-responsive" />
 
                 <p style="color:#104461;">
-                    Plantio de árvores na Augusto Montenegro
-                    marca a nova etapa de obras do BRT. [+]
+                   {{:titulo}} [+]
                 </p>
             </div>
         </a>
@@ -168,7 +167,7 @@
 </script>
 <script>
 
-    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/1?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=6&page=1&status=4', "template", "corpoNoticias"); })
+    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/1?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=6&page=1&status=3', "template", "corpoNoticias"); })
 </script>
 
 <script src="Scripts/script.js"></script>
