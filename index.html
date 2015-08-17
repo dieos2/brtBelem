@@ -149,7 +149,7 @@
 </body>
 </html>
 <script type="text/html" id="template">
-
+    {{if #index > 3}}
     <div class="col-sm-4 col-xs-12 ">
 
         <a href="noticia.html?id={{:id_versao}}" target="">
@@ -163,11 +163,29 @@
         </a>
 
     </div>
-
+    {{/if}}
 </script>
 <script>
 
-    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/1?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=6&page=1&status=3', "template", "corpoNoticias"); })
+    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/1?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=10&page=1&status=3', "template", "corpoNoticias"); })
+</script>
+
+<script type="text/html" id="templateTimeLine">
+  
+    <div class="col-md-3 col-sm-4 col-xs-6">
+        <div class="item">
+            <h3>{{:~formataDataTimeline(data_pub)}}</h3>
+            <p>{{:titulo}}</p>
+            <div class="leiamais"><a href="timeline.html?data={{:~getMesData(data_pub)}}">Leia mais</a></div>
+            <img src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}&maxHeight=240&maxWidth=200" class="img-responsive pull-left" width="138" />
+            <div class="marcador"></div>
+        </div>
+    </div>
+   
+</script>
+<script>
+
+    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/1?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=4&page=1&status=3', "templateTimeLine", "timelineNoticias"); })
 </script>
 
 <script src="Scripts/script.js"></script>

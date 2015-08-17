@@ -27,8 +27,8 @@
                  });
              });
 
-    jQuery('.itensPagina').change(function () {
-      
+    jQuery('.itensPagina').on("change",function () {
+        debugger;
         itens = jQuery(this).val();
         jQuery('.itensPagina, #itens').val(itens);
         jQuery('.paginador').pagination('updateItemsOnPage', itens);
@@ -74,8 +74,12 @@
 function process(data, callback,temp, resu) {
     debugger;
     var template = jQuery.templates("#"+temp);
-    var html = template.render(data, { format: formataData, formatitulo: formataTituloParaLink, folder: formataPastaAudio, formaTexto: formataTextoParaHiperLink });
-    jQuery("#"+resu).html(html);
+    var html = template.render(data, { format: formataData, formatitulo: formataTituloParaLink, folder: formataPastaAudio,getMesData:getMesData, formaTexto: formataTextoParaHiperLink, formataDataTimeline: formataDataTimeline });
+    if (resu == "timelineNoticias") {
+        jQuery("#" + resu).append(html);
+    } else {
+        jQuery("#" + resu).html(html);
+    }
     if (resu == 'resultadoSecretaria') {
       
         jQuery("#nome_organismo").html(jQuery(".nome_organismo").val())
@@ -206,3 +210,51 @@ function criaPlayerDeAudio() {
     });
 }
 
+function formataDataTimeline(data) {
+
+    var d = new Date(data);
+    var day = d.getDate();
+    var month = d.getMonth() + 1;
+    var year = d.getFullYear();
+    var hour = d.getHours();
+    var min = d.getMinutes();
+    if (day < 10)
+        day = "0" + day;
+   
+    NomeMes = new Array(12)
+    NomeMes[1] = "Janeiro"
+    NomeMes[2] = "Fevereiro"
+    NomeMes[3] = "Março"
+    NomeMes[4] = "Abril"
+    NomeMes[5] = "Maio"
+    NomeMes[6] = "Junho"
+    NomeMes[7] = "Julho"
+    NomeMes[8] = "Agosto"
+    NomeMes[9] = "Setembro"
+    NomeMes[10] = "Outubro"
+    NomeMes[11] = "Novembro"
+    NomeMes[12] = "Dezembro"
+
+    if (hour < 10)
+        hour = '0' + hour;
+    if (min < 10)
+        min = '0' + min;
+    var date = NomeMes[month] + " " + year;
+
+    return date;
+}
+function getMesData(data) {
+
+    var d = new Date(data);
+    var day = d.getDate();
+    var month = d.getMonth() + 1;
+    var year = d.getFullYear();
+    var hour = d.getHours();
+    var min = d.getMinutes();
+    if (day < 10)
+        day = "0" + day;
+
+    var date = month;
+
+    return date;
+}

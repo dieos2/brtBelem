@@ -125,9 +125,33 @@
                     <a href="noticias.html?filtro=brttrânsito">Trânsito</a>
                 </div>
             </div>
-            <div id="paginador"></div>
+            <div id="paginador"><div class="paginacao col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="paginador"></div>
+    <div class="pageOpt">
+        <label>Por página:</label>
+        <select class="itensPagina">
+            <option value="12">12</option>
+            <option value="20">20</option>
+            <option value="60">60</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+</div>
+</div>
             <div id="conteudo"></div>
-            <div id="paginador"></div>
+            <div id="paginador"><div class="paginacao col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="paginador"></div>
+    <div class="pageOpt">
+        <label>Por página:</label>
+        <select class="itensPagina">
+            <option value="12">12</option>
+            <option value="20">20</option>
+            <option value="60">60</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+</div>
+</div>
         </div>
         </div>
     <!-- conteudo - out -->
@@ -152,9 +176,9 @@
     <div class="col-sm-4 col-xs-12 ">
 
         <a href="noticia.html?id={{:id_versao}}" target="">
-            <div class="noticia" style="min-height:299px">
+            <div class="noticia" style="min-height:299px;    max-height: 299px;">
                 {{if id_galeria != 0}}
-                <img src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}&maxHeight=240&maxWidth=360" class="img-responsive" />
+                <img src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}&maxHeight=240&maxWidth=362" class="img-responsive" />
                
                 <div class="titulo">
                     {{:titulo}} [+]
@@ -182,7 +206,7 @@
     if (filtro == url) {
         filtro = '';
     }
-    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/1?dataIni=&dataFim=&idOrgao=&termo=&filtro='+filtro, "template", "conteudo"); })
+    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/1?dataIni=&dataFim=&idOrgao=&termo=&filtro='+filtro+'&', "template", "conteudo"); })
 </script>
 
 <script src="Scripts/script.js"></script>

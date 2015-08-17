@@ -15,10 +15,11 @@ $.get("_timeline.html", function (data) {
     $("#timeline").html(data);
 
 });
-$.get("_paginador.html", function (data) {
-    $("#paginador").html(data);
+$.get("index (3).html", function (data) {
+    $("#conteudoTimeLine").html(data);
 
 });
+
 
   var _gaq = _gaq || [];
 var pluginUrl = 
