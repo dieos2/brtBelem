@@ -74,7 +74,7 @@
 function process(data, callback,temp, resu) {
     debugger;
     var template = jQuery.templates("#"+temp);
-    var html = template.render(data, { format: formataData, formatitulo: formataTituloParaLink, folder: formataPastaAudio,getMesData:getMesData, formaTexto: formataTextoParaHiperLink, formataDataTimeline: formataDataTimeline });
+    var html = template.render(data, { format: formataData, formataDatInternaTimeline: formataDatInternaTimeline, formatitulo: formataTituloParaLink, folder: formataPastaAudio, getMesData: getMesData, formaTexto: formataTextoParaHiperLink, formataDataTimeline: formataDataTimeline });
     if (resu == "timelineNoticias") {
         jQuery("#" + resu).append(html);
     } else {
@@ -88,6 +88,8 @@ function process(data, callback,temp, resu) {
     if (callback) {
         callback();
     }
+
+    MontaTimeLine();
 }
 function formataData(data) {
    
@@ -251,10 +253,39 @@ function getMesData(data) {
     var year = d.getFullYear();
     var hour = d.getHours();
     var min = d.getMinutes();
+
     if (day < 10)
         day = "0" + day;
 
     var date = month;
+
+    return date;
+}
+
+function formataDatInternaTimeline(data) {
+
+    var d = new Date(data);
+    var day = d.getDate();
+    var month = d.getMonth() + 1;
+    var year = d.getFullYear();
+    var hour = d.getHours();
+    var min = d.getMinutes();
+    if (day < 10)
+        day = "0" + day;
+    NomeMes = new Array(12)
+    NomeMes[1] = "Janeiro"
+    NomeMes[2] = "Fevereiro"
+    NomeMes[3] = "Março"
+    NomeMes[4] = "Abril"
+    NomeMes[5] = "Maio"
+    NomeMes[6] = "Junho"
+    NomeMes[7] = "Julho"
+    NomeMes[8] = "Agosto"
+    NomeMes[9] = "Setembro"
+    NomeMes[10] = "Outubro"
+    NomeMes[11] = "Novembro"
+    NomeMes[12] = "Dezembro"
+    var date = day + " " +NomeMes[month];
 
     return date;
 }
