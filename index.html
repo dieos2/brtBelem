@@ -6,6 +6,7 @@
 
     <style type="text/css">
         @import "template.css";
+         @import "css/simplePagination.css"
     </style>
     <link rel="SHORTCUT ICON" href="http://agenciabelem.com.br/especial/imagens/favicon.png" type="image/x-icon" />
     <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
@@ -103,16 +104,20 @@
         <div class="container">
 
             <h2>NOTÍCIAS</h2>
-
+          
             <div id="corpoNoticias" class="row">
 
 
 
 
             </div>
+            <div id="paginador">
+                <div class="paginacao col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="paginadorSlider"></div>
+                   
+                </div>
 
-
-        </div>
+            </div>
     
         
         </div>
@@ -149,7 +154,7 @@
 </body>
 </html>
 <script type="text/html" id="template">
-    {{if #index > 3}}
+  
     <div class="col-sm-4 col-xs-12 ">
 
         <a href="noticia.html?id={{:id_versao}}" target="">
@@ -163,14 +168,14 @@
         </a>
 
     </div>
-    {{/if}}
+   
 </script>
 <script>
-
-    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/1?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=10&page=1&status=3', "template", "corpoNoticias"); })
+   
+    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/1?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=6&status=3', "template", "corpoNoticias"); })
 </script>
 
-<script type="text/html" id="templateTimeLine">
+<!--<script type="text/html" id="templateTimeLine">
   
     <div class="col-md-3 col-sm-4 col-xs-6">
         <div class="item">
@@ -216,6 +221,6 @@
         var d = setTimeout(function () { buscaAPI('http://api.sgn.net.br/Api/Noticia/1?dataIni=01/' + quartoMes + '/' + Ano + '&dataFim=30/' + quartoMes + '/' + Ano + '&idOrgao=&termo=&filtro=&itens=1&page=1&status=3', "templateTimeLine", "timelineNoticias"); }, 4000);
     })
   
-</script>
+</script>-->
 <script src="Scripts/main.js"></script> <!-- Resource jQuery -->
 <script src="Scripts/script.js"></script>

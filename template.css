@@ -107,7 +107,7 @@ header { overflow:hidden; }
 
 
 /* o brt */
-#o_brt { background:#000; overflow:hidden; padding:10px 0 20px;  opacity: 0.6; margin-top: -156px;
+#o_brt { background: rgba(2, 2, 2, 0.62); overflow:hidden; padding:10px 0 20px;  margin-top: -156px;
     filter: alpha(opacity=60); /* For IE8 and earlier */} 
 
 #o_brt h3{ color: #fff !important; font-size: 16px  !important; font-weight: normal !important; text-align: center  !important;  }

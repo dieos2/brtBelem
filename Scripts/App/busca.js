@@ -25,6 +25,26 @@
                              });
                      }
                  });
+                 jQuery('.paginadorSlider').pagination({
+                     items: data.total,
+                     itemsOnPage: data.itens,
+                     cssStyle: 'light-theme',
+                     prevText: '<',
+                     nextText: '>',
+                     displayedPages: 0,
+                     edges:0,
+                     onPageClick: function (page) {
+                         jQuery.get(urlB + jQuery('#pesquisaForm').serialize() + '&page=' + page)
+                             .done(function (d) {
+                                 debugger;
+                                 jQuery("#" + resu).hide("slide", { direction: "left" }, 100);
+                                
+
+                                 process(d.resultado, callback, temp, resu);
+                                 jQuery('.paginadorSlider').pagination('updateItems', d.total);
+                             });
+                     }
+                 });
              });
 
     jQuery('.itensPagina').on("change",function () {
@@ -78,12 +98,11 @@ function process(data, callback,temp, resu) {
     if (resu == "timelineNoticias") {
         jQuery("#" + resu).append(html);
     } else {
+       
         jQuery("#" + resu).html(html);
+        jQuery("#" + resu).show("slide", { direction: "rigth" }, 1000);
     }
-    if (resu == 'resultadoSecretaria') {
-      
-        jQuery("#nome_organismo").html(jQuery(".nome_organismo").val())
-    }
+   
     $(".txttelefone").mask("(00) 0000-00009");
     if (callback) {
         callback();
