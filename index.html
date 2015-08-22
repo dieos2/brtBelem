@@ -104,27 +104,24 @@
         <div class="container">
 
             <div style="width: 100%;">
-                <h2 style="float: left;">NOTÍCIAS</h2>
+                <h2 title="noticias" style="float: left;">NOTÍCIAS</h2>
                 <div class="categorias" style="float: right; margin: 26px 0 0 0;">
 
-                    <div class="categoria active">
-                        <a href="noticias.html">Todas</a>
+                    <div data-filtro="BRTBelem" class="categoria active">
+                        <a href="#noticias">Todas</a>
                     </div>
 
-                    <div class="categoria">
-                        <a href="noticias.html?filtro=brtobra">Obra</a>
+                   
+                    <div data-filtro="BRTMeioAmbiente" class="categoria">
+                        <a href="#noticias">Meio Ambiente</a>
                     </div>
 
-                    <div class="categoria">
-                        <a href="noticias.html?filtro=brtmeioAmbiente">Meio Ambiente</a>
-                    </div>
-
-                    <div class="categoria">
-                        <a href="noticias.html?filtro=brttrânsito">Trânsito</a>
+                    <div data-filtro="BRTTransito" class="categoria">
+                        <a href="#noticias">Trânsito</a>
                     </div>
                 </div>
             </div>
-            <div id="corpoNoticias" class="row" style="margin-top: 69px">
+            <div title="noticias" id="corpoNoticias" class="row" style="margin-top: 69px">
 
 
 
@@ -187,12 +184,9 @@
     </div>
    
 </script>
-<script>
-   
-    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/1?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=6&status=3', "template", "corpoNoticias"); })
-</script>
 
-<!--<script type="text/html" id="templateTimeLine">
+
+<script type="text/html" id="templateTimeLine">
   
     <div class="col-md-3 col-sm-4 col-xs-6">
         <div class="item">
@@ -206,38 +200,25 @@
    
 </script>
 <script>
-    Hoje = new Date();
-    Data = Hoje.getDate();
-    Dia = Hoje.getDay();
-    Mes = Hoje.getMonth()+1;
-    Ano = Hoje.getFullYear();
-    
+   
   
-    primeiroMes = Mes;
-    segundoMes = Mes - 1;
-    terceiroMes = Mes - 2;
-    quartoMes = Mes - 3;
+    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=BRTTimeLine&itens=4', "templateTimeLine", "timelineNoticias"); })
+      
+   
+  
+</script>
 
-    if (primeiroMes.length = 1) {
-        primeiroMes = "0" + primeiroMes;
-    }
-    if (segundoMes.length = 1) {
-        segundoMes = "0" + segundoMes;
-    }
-    if (terceiroMes.length = 1) {
-        terceiroMes = "0" + terceiroMes;
-    }
-    if (quartoMes.length = 1) {
-        quartoMes = "0" + quartoMes;
-    }
-    debugger;
-    jQuery(function () {
-        var a = setTimeout(function () { buscaAPI('http://api.sgn.net.br/Api/Noticia/1?dataIni=01/' + primeiroMes + '/' + Ano + '&dataFim=30/' + primeiroMes + '/' + Ano + '&idOrgao=&termo=&filtro=&itens=1&page=1&status=3', "templateTimeLine", "timelineNoticias"); }, 1000);
-        var b = setTimeout(function () { buscaAPI('http://api.sgn.net.br/Api/Noticia/1?dataIni=01/' + segundoMes + '/' + Ano + '&dataFim=30/' + segundoMes + '/' + Ano + '&idOrgao=&termo=&filtro=&itens=1&page=1&status=3', "templateTimeLine", "timelineNoticias"); }, 2000);
-        var c = setTimeout(function () { buscaAPI('http://api.sgn.net.br/Api/Noticia/1?dataIni=01/' + terceiroMes + '/' + Ano + '&dataFim=30/' + terceiroMes + '/' + Ano + '&idOrgao=&termo=&filtro=&itens=1&page=1&status=3', "templateTimeLine", "timelineNoticias"); }, 3000);
-        var d = setTimeout(function () { buscaAPI('http://api.sgn.net.br/Api/Noticia/1?dataIni=01/' + quartoMes + '/' + Ano + '&dataFim=30/' + quartoMes + '/' + Ano + '&idOrgao=&termo=&filtro=&itens=1&page=1&status=3', "templateTimeLine", "timelineNoticias"); }, 4000);
+<script>
+    jQuery(".categoria").click(function () {
+        $(".categoria").each(function (i) {
+            $(this).removeClass("active");
+
+        });
+        $(this).addClass("active");
+        filtro = $(this).attr("data-filtro");
+        jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=' + filtro + '&itens=6', "template", "corpoNoticias"); })
     })
-  
-</script>-->
+    jQuery(function () { var a = buscaAPIComSlide('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=BRTBelem&itens=6', "template", "corpoNoticias"); })
+</script>
 <script src="Scripts/main.js"></script> <!-- Resource jQuery -->
 <script src="Scripts/script.js"></script>

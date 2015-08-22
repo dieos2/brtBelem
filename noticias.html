@@ -94,35 +94,32 @@
         <div class="container">
 
             <h2>Notícias</h2>
-            <div class="categorias">
+            <div class="categorias" style="float: right; margin: 26px 0 0 0;">
                 <form id="pesquisaForm" class="pesquisaForm row">
-                    
+
 
 
                     <div class="imput-busca">
 
 
-                     
+
                         <input type="hidden" id="itens" name="itens" value="12" />
 
 
 
                     </div>
                 </form>
-                <div class="categoria active">
-                    <a href="noticias.html">Todas</a>
+                <div data-filtro="BRTBelem" class="categoria active">
+                    <a href="#noticias">Todas</a>
                 </div>
 
-                <div class="categoria">
-                    <a href="noticias.html?filtro=brtobra">Obra</a>
+
+                <div data-filtro="BRTMeioAmbiente" class="categoria">
+                    <a href="#noticias">Meio Ambiente</a>
                 </div>
 
-                <div class="categoria">
-                    <a href="noticias.html?filtro=brtmeioAmbiente">Meio Ambiente</a>
-                </div>
-
-                <div class="categoria">
-                    <a href="noticias.html?filtro=brttrânsito">Trânsito</a>
+                <div data-filtro="BRTTransito" class="categoria">
+                    <a href="#noticias">Trânsito</a>
                 </div>
             </div>
             <div id="paginador"><div class="paginacao col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -138,7 +135,7 @@
     </div>
 </div>
 </div>
-            <div id="conteudo"></div>
+            <div title="noticias" id="conteudo"></div>
             <div id="paginador"><div class="paginacao col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="paginador"></div>
     <div class="pageOpt">
@@ -200,13 +197,16 @@
 
 </script>
 <script>
-    var url = window.location.href;
-    var filtro = url.substring(url.lastIndexOf('=') + 1);
-    
-    if (filtro == url) {
-        filtro = '';
-    }
-    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/1?dataIni=&dataFim=&idOrgao=&termo=&filtro='+filtro+'&', "template", "conteudo"); })
+    jQuery(".categoria").click(function () {
+        $(".categoria").each(function (i) {
+            $(this).removeClass("active");
+
+        });
+        $(this).addClass("active");
+        filtro = $(this).attr("data-filtro");
+        jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=' + filtro + '&', "template", "conteudo"); })
+    })
+    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=BRTBelem&', "template", "conteudo"); })
 </script>
 <script src="Scripts/main.js"></script> <!-- Resource jQuery -->
 <script src="Scripts/script.js"></script>
