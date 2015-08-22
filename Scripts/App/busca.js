@@ -25,6 +25,7 @@
                              });
                      }
                  });
+                 var pageAnterior =0;
                  jQuery('.paginadorSlider').pagination({
                      items: data.total,
                      itemsOnPage: data.itens,
@@ -37,11 +38,15 @@
                          jQuery.get(urlB + jQuery('#pesquisaForm').serialize() + '&page=' + page)
                              .done(function (d) {
                                  debugger;
-                                 jQuery("#" + resu).hide("slide", { direction: "left" }, 100);
-                                
-
-                                 process(d.resultado, callback, temp, resu);
+                                 if (pageAnterior < page) {
+                                     jQuery("#" + resu).hide("slide", { direction: "left" }, 500);
+                                 } else {
+                                     jQuery("#" + resu).hide("slide", { direction: "rigth" }, 500);
+                                 }
+                                 
+                                 process(d.resultado, callback, temp, resu, page, pageAnterior);
                                  jQuery('.paginadorSlider').pagination('updateItems', d.total);
+                                pageAnterior = page;
                              });
                      }
                  });
@@ -91,7 +96,7 @@
     });
 };
 
-function process(data, callback,temp, resu) {
+function process(data, callback,temp, resu, page, pageAnterior) {
     debugger;
     var template = jQuery.templates("#"+temp);
     var html = template.render(data, { format: formataData, formataDatInternaTimeline: formataDatInternaTimeline, formatitulo: formataTituloParaLink, folder: formataPastaAudio, getMesData: getMesData, formaTexto: formataTextoParaHiperLink, formataDataTimeline: formataDataTimeline });
@@ -100,7 +105,17 @@ function process(data, callback,temp, resu) {
     } else {
        
         jQuery("#" + resu).html(html);
-        jQuery("#" + resu).show("slide", { direction: "rigth" }, 1000);
+        debugger;
+        if (pageAnterior < page) {
+           jQuery("#" + resu).show("slide", { direction: "rigth" }, 500);
+        } else {
+            
+  jQuery("#" + resu).show("slide", { direction: "left" }, 500);
+          
+        }
+         
+     
+       
     }
    
     $(".txttelefone").mask("(00) 0000-00009");
@@ -110,6 +125,9 @@ function process(data, callback,temp, resu) {
 
     MontaTimeLine();
 }
+
+
+
 function formataData(data) {
    
     var d = new Date(data);

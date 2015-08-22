@@ -103,9 +103,28 @@
     <div id="noticias">
         <div class="container">
 
-            <h2>NOTÍCIAS</h2>
-          
-            <div id="corpoNoticias" class="row">
+            <div style="width: 100%;">
+                <h2 style="float: left;">NOTÍCIAS</h2>
+                <div class="categorias" style="float: right; margin: 26px 0 0 0;">
+
+                    <div class="categoria active">
+                        <a href="noticias.html">Todas</a>
+                    </div>
+
+                    <div class="categoria">
+                        <a href="noticias.html?filtro=brtobra">Obra</a>
+                    </div>
+
+                    <div class="categoria">
+                        <a href="noticias.html?filtro=brtmeioAmbiente">Meio Ambiente</a>
+                    </div>
+
+                    <div class="categoria">
+                        <a href="noticias.html?filtro=brttrânsito">Trânsito</a>
+                    </div>
+                </div>
+            </div>
+            <div id="corpoNoticias" class="row" style="margin-top: 69px">
 
 
 
@@ -122,7 +141,7 @@
         
         </div>
     	
-   
+   </div>
     <!-- noticias - out -->
     
     
@@ -158,13 +177,11 @@
     <div class="col-sm-4 col-xs-12 ">
 
         <a href="noticia.html?id={{:id_versao}}" target="">
-            <div class="noticia" style="min-height:299px">
-                <img src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}&maxHeight=240&maxWidth=360" class="img-responsive" />
+            <div style="margin-bottom: 30px">
+                <img src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}&maxHeight=240&maxWidth=360" class="img-responsive" style="height: 239px !important;" />
 
-                <p style="color:#104461;">
-                   {{:titulo}} [+]
-                </p>
-            </div>
+           
+            </div><div style=" background: rgba(2, 2, 2, 0.62);width: 360px; height: 61px; overflow: hidden; padding: 10px; margin-top: -91px; color: #fff; display: inline-block;">{{:titulo}}</div>
         </a>
 
     </div>
