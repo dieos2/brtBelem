@@ -40,9 +40,9 @@ header { overflow:hidden; }
 }
 
 
-.botao_menu { margin-top:27px; }
-.botao_menu .texto { font-size:29px; margin-top:2px; margin-right:10px; }
-.botao_menu .glyphicon-menu-hamburger { font-size:43px;  }
+.botao_menu { margin-top:11px; }
+.botao_menu .texto { font-size:22px; margin-top:2px; margin-right:5px; font-weight: bold }
+.botao_menu .glyphicon-menu-hamburger { font-size:31px;  }
 .botao_menu a { color:#1d1868; }
 .botao_menu a .glyphicon-menu-hamburger { color:#2e3192; }
 .video_inicio { height:702px; margin-top:98px; background:url(imagens/video_fundo.jpg) top center no-repeat;  }
@@ -55,7 +55,7 @@ header { overflow:hidden; }
     padding-right:0 !important;
 	overflow:visible !important;
 }
-
+.logo{    margin-left: 50px;}
 
 
 .botao_menu .dropdown-menu {
