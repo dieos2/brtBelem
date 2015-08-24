@@ -178,7 +178,7 @@
                 <img src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}&maxHeight=240&maxWidth=360" class="img-responsive" style="height: 239px !important;" />
 
            
-            </div><div style=" background: rgba(2, 2, 2, 0.62);width: 360px; height: 61px; overflow: hidden; padding: 10px; margin-top: -91px; color: #fff; display: inline-block;">{{:titulo}}</div>
+            </div><div style=" background: rgba(2, 2, 2, 0.62);width: 360px; height: 61px; overflow: hidden; padding: 10px; margin-top: -91px; color: #fff; display: inline-block;">{{:titulo}} [+]</div>
         </a>
 
     </div>
@@ -190,11 +190,13 @@
   
     <div class="col-md-3 col-sm-4 col-xs-6">
         <div class="item">
-            <h3>{{:~formataDataTimeline(data_pub)}}</h3>
-            <p>{{:titulo}}</p>
-            <div class="leiamais"><a href="timeline.html?data={{:~getMesData(data_pub)}}">Leia mais</a></div>
-            <img src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}&maxHeight=240&maxWidth=200" class="img-responsive pull-left" width="138" height="138" />
+            <a href="noticia.html?id={{:id_versao}}">
+                <p>{{:titulo}} [+]</p>
+
+                <img src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}&maxHeight=163&maxWidth=270" class="" width="270" height="163" />
+            </a>
             <div class="marcador"></div>
+            <span>{{:~formataDataSemHora(data_pub)}}</span>
         </div>
     </div>
    

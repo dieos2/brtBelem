@@ -171,7 +171,7 @@ function buscaAPIComSlide(urlB, temp, resu) {
 function process(data, callback,temp, resu, page, pageAnterior) {
     debugger;
     var template = jQuery.templates("#"+temp);
-    var html = template.render(data, { format: formataData, formataDatInternaTimeline: formataDatInternaTimeline, formatitulo: formataTituloParaLink, folder: formataPastaAudio, getMesData: getMesData, formaTexto: formataTextoParaHiperLink, formataDataTimeline: formataDataTimeline });
+    var html = template.render(data, { format: formataData,formataDataSemHora:formataDataSemHora, formataDatInternaTimeline: formataDatInternaTimeline, formatitulo: formataTituloParaLink, folder: formataPastaAudio, getMesData: getMesData, formaTexto: formataTextoParaHiperLink, formataDataTimeline: formataDataTimeline });
     if (resu == "timelineNoticias") {
         jQuery("#" + resu).append(html);
     } else {
@@ -217,6 +217,26 @@ function formataData(data) {
     if (min < 10)
         min = '0' + min;
     var date = day + "/" + month + "/" + year + " | " + hour + ":" + min;
+
+    return date;
+}
+function formataDataSemHora(data) {
+
+    var d = new Date(data);
+    var day = d.getDate();
+    var month = d.getMonth() + 1;
+    var year = d.getFullYear();
+    var hour = d.getHours();
+    var min = d.getMinutes();
+    if (day < 10)
+        day = "0" + day;
+    if (month < 10)
+        month = "0" + month;
+    if (hour < 10)
+        hour = '0' + hour;
+    if (min < 10)
+        min = '0' + min;
+    var date = day + "/" + month + "/" + year;
 
     return date;
 }
