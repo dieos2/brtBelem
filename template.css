@@ -59,7 +59,14 @@ header { overflow:hidden; }
 .menuHover{
     cursor: pointer;
 }
-
+footer h2{
+    background: url(imagens/ico_contato.png) top left no-repeat;
+    padding-left: 80px;
+    padding-top: 17px;
+    padding-bottom: 20px;
+    font-size: 35px !important;
+    color: #fff !important;
+}
 
 .botao_menu .dropdown-menu {
 	max-width:100%;
@@ -186,7 +193,7 @@ a:hover { text-decoration:none !important; }
 
 
 /* rodape */
-footer { background:url(imagens/rodape_fundo.jpg) top center no-repeat; height:207px; }
+footer { background:url(imagens/rodape_fundo.jpg) top center no-repeat; height:382px; }
 footer .redes { text-align:center; }
 
 /* rotativo */
