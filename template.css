@@ -56,6 +56,9 @@ header { overflow:hidden; }
 	overflow:visible !important;
 }
 .logo{    margin-left: 50px;}
+.menuHover{
+    cursor: pointer;
+}
 
 
 .botao_menu .dropdown-menu {
