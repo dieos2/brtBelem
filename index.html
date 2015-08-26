@@ -249,7 +249,7 @@
         var email = jQuery("#email").val();
         var mensagem = jQuery("#mensagem").val();
 
-        sendMail();
+        sendMail(nome, email, mensagem);
     })
     jQuery(".categoria").click(function () {
         $(".categoria").each(function (i) {
@@ -264,10 +264,18 @@
     function sendMail(nome, email, mensagem) {
         $.ajax({
             url: "http://agenciabelem.com.br/votacao/EnviaContato?nome="+nome+"&email="+email+"&mensagem="+mensagem,
-           
-        }).done(function () {
+           ascync:false,
+        }).success(function () {
+            debugger;
             alert("Enviado");
+            jQuery("#nome").val("");
+           jQuery("#email").val("");
+           jQuery("#mensagem").val("");
         });
+        alert("Email Enviado");
+        jQuery("#nome").val("");
+        jQuery("#email").val("");
+        jQuery("#mensagem").val("");
     }
 </script>
 <script src="Scripts/main.js"></script> <!-- Resource jQuery -->

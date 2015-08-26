@@ -169,7 +169,7 @@ function buscaAPIComSlide(urlB, temp, resu) {
     });
 };
 function process(data, callback,temp, resu, page, pageAnterior) {
-    debugger;
+
     var template = jQuery.templates("#"+temp);
     var html = template.render(data, { format: formataData,formataDataSemHora:formataDataSemHora, formataDatInternaTimeline: formataDatInternaTimeline, formatitulo: formataTituloParaLink, folder: formataPastaAudio, getMesData: getMesData, formaTexto: formataTextoParaHiperLink, formataDataTimeline: formataDataTimeline });
     if (resu == "timelineNoticias") {
@@ -177,7 +177,7 @@ function process(data, callback,temp, resu, page, pageAnterior) {
     } else {
        
         jQuery("#" + resu).html(html);
-        debugger;
+ 
         if (pageAnterior < page) {
            jQuery("#" + resu).show("slide", { direction: "rigth" }, 500);
         } else {
