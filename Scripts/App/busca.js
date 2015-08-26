@@ -1,5 +1,5 @@
 ﻿function buscaAPI(urlB, temp, resu) {
-    debugger;
+
     var url = urlB,
         callback = typeof retorno !== 'undefined' ? retorno : null;
 
@@ -29,14 +29,14 @@
              });
 
     jQuery('.itensPagina').on("change",function () {
-        debugger;
+      
         itens = jQuery(this).val();
         jQuery('.itensPagina, #itens').val(itens);
         jQuery('.paginador').pagination('updateItemsOnPage', itens);
     });
 
     jQuery('#pesquisaForm').submit(function (e) {
-        debugger;
+       
         e.preventDefault();
         
         jQuery('.paginador').pagination('updateItemsOnPage', jQuery('#itens').val());
@@ -72,7 +72,7 @@
     });
 };
 function buscaAPIComSlide(urlB, temp, resu) {
-    debugger;
+  
     var url = urlB,
         callback = typeof retorno !== 'undefined' ? retorno : null;
 
@@ -110,7 +110,7 @@ function buscaAPIComSlide(urlB, temp, resu) {
                      onPageClick: function (page) {
                          jQuery.get(urlB + jQuery('#pesquisaForm').serialize() + '&page=' + page)
                              .done(function (d) {
-                                 debugger;
+                              
                                  if (pageAnterior < page) {
                                      jQuery("#" + resu).hide("slide", { direction: "left" }, 500);
                                  } else {
@@ -126,14 +126,14 @@ function buscaAPIComSlide(urlB, temp, resu) {
              });
 
     jQuery('.itensPagina').on("change", function () {
-        debugger;
+       
         itens = jQuery(this).val();
         jQuery('.itensPagina, #itens').val(itens);
         jQuery('.paginador').pagination('updateItemsOnPage', itens);
     });
 
     jQuery('#pesquisaForm').submit(function (e) {
-        debugger;
+      
         e.preventDefault();
 
         jQuery('.paginador').pagination('updateItemsOnPage', jQuery('#itens').val());
