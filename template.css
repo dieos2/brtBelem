@@ -184,7 +184,7 @@ a:hover { text-decoration:none !important; }
 
 .categorias { display:inline-block; }
 .categorias .categoria { float:left; margin-right:14px; font-weight:700; text-transform:uppercase; font-size:16px; letter-spacing:-1px; }
-.categoria.active a { border:2px solid #1d1868; color:#1d1868; color: #fff !important; background-color: #1d1868; }
+.categoria.active a { border:2px solid #1d1868; color:#1d1868;  }
 .categoria a { color:#656363; padding:1px 10px 1px 7px; border:2px solid #ffd105; }
 .categoria a:hover { text-decoration:none; background:#1d1868; color:#fff !important; border:2px solid #1d1868;  }
 
