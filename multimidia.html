@@ -6,7 +6,24 @@
 
 
 
-<style>@import "template.css";</style>
+    <style>
+        @import "template.css";
+        @import "css/simplePagination.css"
+    </style>
+    <style>
+        .titulo {
+            font-size: 14px !important;
+            font-weight: 700 !important;
+            color: #1d1868 !important;
+            text-transform: uppercase !important;
+            margin: 0px 0 0 10px;
+        }
+
+        .container h2 {
+            display: inline-block;
+            margin-right: 50px;
+        }
+    </style>
 
 <script type='text/javascript' src='http://code.jquery.com/jquery-2.1.4.min.js'></script>
 
@@ -60,152 +77,136 @@
 </head>
 
 <body>
-            
-	<header>
-    
-    	<div class="menu">
-        	<div class="container">
-            
-            	
-            	<div class="logo pull-left">
-                	<a href="index.html"><img src="imagens/logo_brt_menu.png" /></a>
-                </div>
-                
-                
-                
-                <div class="botao_menu dropdown pull-right">
-                                        
-                	<a data-target="#" href="" data-toggle="dropdown" class="dropdown-toggle"><span class="texto pull-left">MENU</span> <span class="glyphicon glyphicon-menu-hamburger pull-right" aria-hidden="true"></span></a>
-                    
-                    <ul class="dropdown-menu">
-                    	<a data-target="#" href="" data-toggle="dropdown" class="dropdown-toggle fechar"><span class="glyphicon glyphicon-remove pull-right" aria-hidden="true"></span></a>
-                    	
-                        <li><a href="index.html">Início</a></li>
-                        <li><a href="#">Tecnologia BRT</a></li>
-                        <li><a href="#">cenário atual</a></li>
-                        <li><a href="#">cenário belém 400 anos</a></li>
-                        <li><a href="#">aspectos operacionais dos serviços</a></li>
-                        <li class="divider"></li>
-                        <li><a href="noticia.html">notícias</a></li>
-                        <li><a href="#">linha do tempo</a></li>
-                        <li><a href="#">documentos</a></li>
-                        <li class="active"><a href="multimidia.html">multimídia</a></li>
-                        <br />
-                        
-                        <li class="menu_busca">
-                        <form>
-                        	<input type="text" placeholder="Busca" class="busca pull-left" /><button type="submit" class="enviar pull-right"><span class="glyphicon glyphicon-search pull-right" aria-hidden="true"></span></button>
-                        </form>
-                        </li>
-                        
-                        <br />
-                        <a href="http://facebook.com" target="_blank"><img src="imagens/menu_facebook.png" /></a><a href="http://twitter.com" target="_blank"><img src="imagens/menu_twitter.png" /></a><a href="/feed" target="_blank"><img src="imagens/menu_feed.png" /></a>
-                    </ul>
-                    
-                </div>
-            </div>
+
+    <header>
+
+        <div id="menu" class="menu">
+
         </div>
-        
-        
-        
-        
+
+
+
+
         <div class="topo multimidia">
         </div>
-    
+
     </header>
-    
-    
-    
-    
-    
+
+
+
+
+
     <!-- conteudo - in -->
-    <div class="conteudo">
-    	
+    <div id="noticias" style="background-color:#ffd105" class="">
         <div class="container">
-        	
+
             <h2>Multimídia</h2>
-            
-            <div class="categorias">
-            	<div class="categoria active">
-                	<a href="#">Vídeos</a>
-                </div>
-                
-                <div class="categoria">
-                	<a href="#">Fotos</a>
-                </div>
-            </div>
-            
-            <div id="conteudo" class="row">
 
-                
+            <div class="categorias" style="float: right; margin: 26px 0 0 0;">
+                <form id="pesquisaForm" class="pesquisaForm row">
+
+
+
+                    <div class="imput-busca">
+
+
+
+                        <input type="hidden" id="itens" name="itens" value="12" />
+
+
+
+                    </div>
+                </form>
+                <div data-filtro="video" class="categoria active">
+                    <a href="#">Vídeos</a>
+                </div>
+
+                <div data-filtro="foto" class="categoria">
+                    <a href="#">Fotos</a>
+                </div>
             </div>
-            
+
+            <div id="paginador">
+                <div class="paginacao col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="paginador"></div>
+                    <div class="pageOpt">
+                        <label>Por página:</label>
+                        <select class="itensPagina">
+                            <option value="12">12</option>
+                            <option value="20">20</option>
+                            <option value="60">60</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div title="noticias" id="conteudo"></div>
+            <div id="paginador">
+                <div class="paginacao col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="paginador"></div>
+                    <div class="pageOpt">
+                        <label>Por página:</label>
+                        <select class="itensPagina">
+                            <option value="12">12</option>
+                            <option value="20">20</option>
+                            <option value="60">60</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
             <!-- reseta o src do iframe de dentro do modal #myModal ao fechar parando o vídeo -->
-                  <script type="text/javascript">
-				  
-				  		/*
-				  		var currentModal = '';
-		  
-				  		$('#myModal').on('show.bs.modal', function () {
-							
-							alert("entrou");
-							
-							$myModal = $(this);
-						
-							currentModal = $myModal.attr("rel");
-							
-							alert(currentModal);
-						
-						});
-						*/
-						
-						$('.modal').on('hidden.bs.modal', function () {
-					
-							$iframe = $(this).find( "iframe" );
-							
-							$iframe.attr("src", $iframe.attr("src"));
-						});
-	              </script>
+            <script type="text/javascript">
 
-            
+                /*
+                var currentModal = '';
+
+                $('#myModal').on('show.bs.modal', function () {
+
+                    alert("entrou");
+
+                    $myModal = $(this);
+
+                    currentModal = $myModal.attr("rel");
+
+                    alert(currentModal);
+
+                });
+                */
+
+                $('.modal').on('hidden.bs.modal', function () {
+
+                    $iframe = $(this).find("iframe");
+
+                    $iframe.attr("src", $iframe.attr("src"));
+                });
+            </script>
+
+
         </div>
-        
+
     </div>
     <!-- conteudo - out -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <!-- rodape - in -->
-    <footer>
-    	
-    </footer>
+    <footer></footer>
     <!-- rodape - out -->
-    
 
-    
+
+
 
 </body>
 </html>
 <script type="text/html" id="template">
-
-
-
-
-
-    <div class="col-md-3 col-xs-6 ">
+    {{if id_Foto == null}}
+    <div class="col-md-3 col-xs-6 " style="height:260px">
 
         <a href="#" data-toggle="modal" data-target=".midia{{:id}}">
             <div class="midia">
-                <img src='http://img.youtube.com/vi/{{:codigo}}/1.jpg' class="img-responsive" />
+                <img src='http://img.youtube.com/vi/{{:codigo}}/0.jpg' class="img-responsive" />
                 <img src="imagens/botao_play.png" class="img-responsive" style="position:absolute; top:0; left:0;" />
 
-                <p style="color:#104461; ">{{:titulo}}</p>
+                <p style="color:#104461; font-size:14px ">{{:titulo}}</p>
             </div>
         </a>
 
@@ -230,17 +231,37 @@
         </div>
 
     </div>
+    {{else}}
+    <div class="col-md-3 col-xs-6 " style="height:260px">
 
+        <a href="#" data-toggle="modal" data-target=".midia{{:id}}">
+            <div class="midia">
+                <img src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome}}&maxHeight=240&maxWidth=362" class="img-responsive" />
+             
+
+                <p style="color:#104461; font-size:14px ">{{:titulo}}</p>
+            </div>
+        </a>
+
+        <!-- Modal -->
+   
+
+    </div>
+    {{/if}}
 
 </script>
 <script>
-    var url = window.location.href;
-    var filtro = url.substring(url.lastIndexOf('=') + 1);
+    jQuery(".categoria").click(function () {
+        debugger;
+        $(".categoria").each(function (i) {
+            $(this).removeClass("active");
 
-    if (filtro == url) {
-        filtro = '';
-    }
-    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/video/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=8', "template", "conteudo"); })
+        });
+        $(this).addClass("active");
+        filtro = $(this).attr("data-filtro");
+        jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/' + filtro + '/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=BRTBelem&', "template", "conteudo"); })
+    })
+    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/video/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=BRTBelem&itens=8', "template", "conteudo"); })
 </script>
 <script src="Scripts/main.js"></script> <!-- Resource jQuery -->
 <script src="Scripts/script.js"></script>

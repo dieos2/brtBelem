@@ -19,7 +19,9 @@ $.get("index (3).html", function (data) {
     $("#conteudoTimeLine").html(data);
 
 });
-
+$.get("_footer.html", function (data) {
+    $("footer").html(data);
+})
 
   var _gaq = _gaq || [];
 var pluginUrl = 
