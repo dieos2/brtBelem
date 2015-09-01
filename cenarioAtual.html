@@ -30,7 +30,12 @@
     <script src="Scripts/jquery.mask.min.js"></script>
     <script src="Scripts/jquery.ui.datepicker.js"></script>
     <script src="Scripts/jquery.simplePagination.js"></script>
+    <!-- Add mousewheel plugin (this is optional) -->
+    <script type="text/javascript" src="scripts/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
 
+    <!-- Add fancyBox -->
+    <link rel="stylesheet" href="scripts/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="scripts/fancybox/source/jquery.fancybox.js"></script>
 <script type="text/javascript">
 
 
@@ -67,9 +72,9 @@
         
         
         
-        <div class="topo noticias">
-        </div>
-    
+        <div class="topo cenarioatual">
+           
+    </div>
     </header>
     
     
@@ -77,9 +82,48 @@
     
     
     <!-- conteudo - in -->
-    <div id="conteudo" class="conteudo">
-    	
-     
+    <div id="noticias" style="background-color:#ffd105" class="">
+
+        <div class="container">
+
+
+            <a class="fancybox" rel="group" href="imagens/mapaatual.png" style="
+    float: left;
+"><img src="imagens/mapaatual.png" width="300" /></a>
+            <ul style="
+    float: left;
+    color: #191465;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 2.0;
+">
+                <li>738,5 mil passageiros/dia</li>
+                <li>11 mil viagens/dia</li>
+                <li>
+                    117 linhas
+                </li>
+                <li>
+                    Frequência superiores a 20 minutos
+                </li>
+                <li>
+                    18 empresas
+                </li>
+                <li>
+                    Elevada sobreposição
+                </li>
+                <li>
+                    Sistema sem integração
+                </li>
+                <li>
+                    Serviços ofertados:
+                </li>
+                <li>
+                    Convencional e Semiurbano
+                </li>
+            </ul>
+        </div>
+    </div>
+
         
     </div>
     <!-- conteudo - out -->
@@ -95,65 +139,11 @@
 
 </body>
 </html>
-<script type="text/html" id="template">
 
-    <div class="container">
-
-        <h2>Notícias</h2>
-
-        <div class="categorias">
-            <div class="categoria active">
-                <a href="#">Todas</a>
-            </div>
-
-            <div class="categoria">
-                <a href="#">Obra</a>
-            </div>
-
-            <div class="categoria">
-                <a href="#">Meio Ambiente</a>
-            </div>
-
-            <div class="categoria">
-                <a href="#">Trânsito</a>
-            </div>
-        </div>
-
-        <div class="row">
-
-            <div class="col-md-9 col-sm-12 col-xs-12 pull-left">
-                <h2>{{:titulo}}</h2>
-
-                <img width="848" height="479" src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}&maxHeight=479&maxWidth=848" class="img-responsive" />
-
-               <p>{{:texto}}</p>
-                <p>
-                    <b>
-                        Governo do Estado do Pará<br />
-                        Secretaria de Estado de Comunicação
-                    </b>
-                </p>
-
-
-
-
-                <p>
-                    <b>COMPARTILHE</b>
-                    <a href="javascript: void(0);" onclick="window.open('http://www.facebook.com/sharer.php?u=http://agenciabelem.com.br','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');" target="_blank" title="Compartilhar no Facebook"><img src="imagens/share_facebook.png" /></a><a href="http://twitter.com/share?text=Noticia BRT - Belém&amp;url=http://agenciabelem.com.br&amp;hashtags=AgenciaBelem,BRT" title="Compartilhar no Twitter" rel="nofollow" target="_blank"><img src="imagens/share_twitter.png" /></a><a href="whatsapp://send?text=http://agenciabelem.com.br/especial/brt.html" data-text="Bem Entendido - BRT" data-href="http://agenciabelem.com.br/especial/brt.html" title="Funciona apenas na versão mobile"><img src="http://agenciabelem.com.br/especial/imagens/rede_whatsapp.jpg" width="50" /></a>
-                </p>
-
-
-            </div>
-
-        </div>
-
-    </div>
-
-</script>
-<script>
-    var url = window.location.href;
-    var id = url.substring(url.lastIndexOf('=') + 1);
-    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/1?dataIni=&dataFim=&idOrgao=&termo=&filtro=&itens=1&page=1&id_versao='+id, "template", "conteudo"); })
-</script>
 
 <script src="Scripts/script.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $(".fancybox").fancybox();
+    });
+</script>
