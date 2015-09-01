@@ -182,6 +182,7 @@ footer a{
 .multimidia { background:url(imagens/multimidia_topo.jpg) top center no-repeat; }
 .cenarioatual { background:url(imagens/cenarioatual_topo.jpg) top center no-repeat; }
 .cenariobelem400 { background:url(imagens/cenariobelem400l_topo.jpg) top center no-repeat; }
+.aspectosoperacionais { background:url(imagens/aspectosoperacionais_topo.jpg) top center no-repeat; }
 .midia { margin:15px auto 20px;; }
 .midia img { width:100%; }
 a .midia p { font-size:18px; letter-spacing:-1px; font-weight:700; color:#1d1868 !important; text-align:left; margin:0px auto }
