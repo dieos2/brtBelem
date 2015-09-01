@@ -11,7 +11,7 @@ body { background:#fff !important; font-family: 'Open Sans', Verdana, Geneva, sa
 /* video responsivo */
 .video-responsive {
     overflow:hidden;
-    padding-bottom:56.25%;
+    padding-bottom:45.25%;
     position:relative;
     height:0;
 }
@@ -240,3 +240,14 @@ footer .redes { text-align:center; }
 }
 
 .compartilhamento a {   margin: auto 5px; }
+
+#ytplayer_div2 {
+    width: 18%;
+    float: left;
+    margin-left: 10px;
+}
+.video-responsive object{
+        float: left;
+    width: 80%;
+    height: 393px;
+}
