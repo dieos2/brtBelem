@@ -83,21 +83,6 @@ function buscaAPIComSlide(urlB, temp, resu) {
 
                  process(data.resultado, callback, temp, resu);
 
-                 jQuery('.paginador').pagination({
-                     items: data.total,
-                     itemsOnPage: data.itens,
-                     cssStyle: 'light-theme',
-                     prevText: 'Anterior',
-                     nextText: 'Próximo',
-                     onPageClick: function (page) {
-                         jQuery.get(urlB + jQuery('#pesquisaForm').serialize() + '&page=' + page)
-                             .done(function (d) {
-
-                                 process(d.resultado, callback, temp, resu);
-                                 jQuery('.paginador').pagination('updateItems', d.total);
-                             });
-                     }
-                 });
                  var pageAnterior = 0;
                  jQuery('.paginadorSlider').pagination({
                      items: data.total,
@@ -168,13 +153,94 @@ function buscaAPIComSlide(urlB, temp, resu) {
         }
     });
 };
-function process(data, callback,temp, resu, page, pageAnterior) {
+function buscaAPITimeLine(urlB, temp, resu) {
+  
+    var url = urlB,
+        callback = typeof retorno !== 'undefined' ? retorno : null;
 
+    url += jQuery('#pesquisaForm').serialize();
+
+    jQuery.get(url)
+             .done(function (data) {
+
+                 process(data.resultado, callback, temp, resu);
+
+           
+                 var pageAnterior = 0;
+                 jQuery('.paginadorTimeLine').pagination({
+                     items: data.total,
+                     itemsOnPage: data.itens,
+                     cssStyle: 'light-theme',
+                     prevText: '<',
+                     nextText: '>',
+                     displayedPages: 0,
+                     edges: 0,
+                     onPageClick: function (page) {
+                         jQuery.get(urlB + jQuery('#pesquisaForm').serialize() + '&page=' + page)
+                             .done(function (d) {
+                                 debugger;
+                                 if (pageAnterior < page) {
+                                     jQuery("#" + resu).hide("slide", { direction: "left" }, 500);
+                                 } else {
+                                     jQuery("#" + resu).hide("slide", { direction: "rigth" }, 500);
+                                 }
+                                
+                                 process(d.resultado, callback, temp, resu, page, pageAnterior);
+                                 jQuery('.paginadorTimeLine').pagination('updateItems', d.total);
+                                 pageAnterior = page;
+                             });
+                     }
+                 });
+             });
+
+    jQuery('.itensPagina').on("change", function () {
+       
+        itens = jQuery(this).val();
+        jQuery('.itensPagina, #itens').val(itens);
+        jQuery('.paginador').pagination('updateItemsOnPage', itens);
+    });
+
+    jQuery('#pesquisaForm').submit(function (e) {
+      
+        e.preventDefault();
+
+        jQuery('.paginador').pagination('updateItemsOnPage', jQuery('#itens').val());
+    });
+
+    jQuery("#dataIni").datepicker({
+        defaultDate: "+1w",
+        dateFormat: 'dd/mm/yy',
+        dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+        dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
+        dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+        monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+        monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+        nextText: 'Próximo',
+        prevText: 'Anterior',
+        onClose: function (selectedDate) {
+            jQuery("#dataFim").datepicker("option", "minDate", selectedDate);
+        }
+    });
+    jQuery("#dataFim").datepicker({
+        defaultDate: "+1w",
+        dateFormat: 'dd/mm/yy',
+        dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+        dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
+        dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+        monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+        monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+        nextText: 'Próximo',
+        prevText: 'Anterior',
+        onClose: function (selectedDate) {
+            jQuery("#dataIni").datepicker("option", "maxDate", selectedDate);
+        }
+    });
+};
+function process(data, callback,temp, resu, page, pageAnterior) {
+    debugger;
     var template = jQuery.templates("#"+temp);
     var html = template.render(data, { format: formataData,formataDataSemHora:formataDataSemHora, formataDatInternaTimeline: formataDatInternaTimeline, formatitulo: formataTituloParaLink, folder: formataPastaAudio, getMesData: getMesData, formaTexto: formataTextoParaHiperLink, formataDataTimeline: formataDataTimeline });
-    if (resu == "timelineNoticias") {
-        jQuery("#" + resu).append(html);
-    } else {
+    
        
         jQuery("#" + resu).html(html);
  
@@ -188,13 +254,17 @@ function process(data, callback,temp, resu, page, pageAnterior) {
          
      
        
-    }
+    
    
     $(".txttelefone").mask("(00) 0000-00009");
     if (callback) {
         callback();
     }
-
+   
+    setTimeout(
+      function () { $(".paginadorTimeLine ul li:last-child").addClass("last-item") },
+        200);
+   
     MontaTimeLine();
 }
 

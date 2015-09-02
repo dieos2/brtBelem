@@ -152,12 +152,33 @@
     
     
     <!-- linha do temo - timeline - in -->
-    <div id="timeline">
+   
     
-        
-       
-        
-        
+    <div id="contenerTimeLine">
+        <div id="timeline">
+
+
+
+
+
+        </div>
+        <div id="" style="
+    position: absolute;
+    margin: -269px 0 0 46px;
+">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="paginadorTimeLine light-theme simple-pagination">
+                    <ul>
+                        <li class="active"><span class="current prev">&lt;</span></li>
+                        <li style="
+    margin: 0px 0 0 1180px;
+"><a href="#page-2" class="page-link next">&gt;</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
     </div>
     <!-- linha do temo - timeline - out -->
     
@@ -207,12 +228,12 @@
             <span>{{:~formataDataSemHora(data_pub)}}</span>
         </div>
     </div>
-   
+  
 </script>
 <script>
    
   
-    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=BRTTimeLine&itens=4', "templateTimeLine", "timelineNoticias"); })
+    jQuery(function () { var a = buscaAPITimeLine('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=BRTTimeLine&itens=4', "templateTimeLine", "timelineNoticias"); })
       
    
   
@@ -232,10 +253,12 @@
             $(this).removeClass("active");
 
         });
+       
         $(this).addClass("active");
         filtro = $(this).attr("data-filtro");
         jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=' + filtro + '&itens=6', "template", "corpoNoticias"); })
     })
+
     jQuery(function () { var a = buscaAPIComSlide('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=BRTBelem&itens=6', "template", "corpoNoticias"); })
     function sendMail(nome, email, mensagem) {
         $.ajax({
@@ -377,5 +400,5 @@
     ytplayer_playlist.push('EuyCkD7mcDY');
     ytplayer_playlist.push('yjBofsONX8Y');
     ytplayer_playlist.push('HnYw-w4gqg');
-  
+   
 </script>
