@@ -201,7 +201,7 @@ a:hover { text-decoration:none !important; }
 #timeline h2 { background:url(imagens/ico_timeline.png) top left no-repeat; padding-left:80px; padding-top:17px; padding-bottom:20px; font-size:35px !important; }
 #timeline .item { height:236px; }
 #timeline .item img {  position:absolute; }
-#timeline .item p { color:#1d1868; font-size:15px; }
+#timeline .item p { color:#1d1868; font-size:15px; min-height: 63px;}
 #timeline .item span {top: 107%;    position: absolute;margin:0 0 0 33%;    font-weight: bold;}
 #timeline .leiamais { position:absolute; top:40%; }
 .leiamais { margin:15px auto; }
@@ -259,7 +259,7 @@ footer .redes { text-align:center; }
  border-color:  #fff;
     cursor: pointer;
         margin: 0 0 0 212px;
-    padding: 13px;
+  padding: 11px 13px;
     width: 84px;
 }
 #timelineNoticias input{
