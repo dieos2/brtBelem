@@ -61,10 +61,10 @@ header { overflow:hidden; }
 }
 footer h2{
     background: url(imagens/ico_contato.png) top left no-repeat;
-   padding-left: 58px;
+   padding-left: 62px;
     padding-top: 12px;
     padding-bottom: 20px;
-    font-size: 24px !important;
+    font-size: 30px !important;
     color: #fff !important;
     margin-top: 7px;
 }
@@ -177,6 +177,7 @@ footer a{
 
 /* notícias - página */
 .noticias { background:url(imagens/noticias_topo.jpg) top center no-repeat; }
+#noticias h2 { background:url(imagens/iconNews.png) top left no-repeat; padding-left:62px; padding-top:17px; padding-bottom:20px; font-size:30px !important; }
 .tecnologia {background:url(imagens/tecnologia_topo.jpg) top center no-repeat; }
 /* multimídia - página */
 .multimidia { background:url(imagens/multimidia_topo.jpg) top center no-repeat; }
@@ -198,7 +199,7 @@ a:hover { text-decoration:none !important; }
 
 /* linha do tempo - timeline */
 #timeline { background:#ffd105; overflow:hidden; padding:20px 0 100px; } 
-#timeline h2 { background:url(imagens/ico_timeline.png) top left no-repeat; padding-left:80px; padding-top:17px; padding-bottom:20px; font-size:35px !important; }
+#timeline h2 { background:url(imagens/ico_timeline.png) top left no-repeat; padding-left:67px; padding-top:17px; padding-bottom:20px; font-size:30px !important; }
 #timeline .item { height:236px; }
 #timeline .item img {  position:absolute; }
 #timeline .item p { color:#1d1868; font-size:15px; min-height: 63px;}
@@ -262,34 +263,44 @@ footer .redes { text-align:center; }
   padding: 11px 13px;
     width: 84px;
 }
-#timelineNoticias input{
+#timelineNoticias input {
     border: 1px solid;
- border-color:  rgb(169, 169, 169);
-}#contenerTimeLine .paginadorTimeLine ul li.last-item{
-     margin: 0px 0 0 1150px;
- }
+    border-color: rgb(169, 169, 169);
+}
 
-#contenerTimeLine .paginadorTimeLine ul li span, #contenerTimeLine .paginadorTimeLine ul li a{
+#paginador ul li span, #paginador ul li a {
+  border:2px solid #1d1868; color:#1d1868;  
+  color:#656363; padding:1px 10px 1px 7px; border:2px solid #ffd105;
+  width: 70px;
+  font-size: 24px;
+
+
+}
+#paginador ul li span, #paginador ul li a:hover { text-decoration:none; background:#1d1868; color:#fff !important; border:2px solid #1d1868;  }
+ .paginadorTimeLine ul li span,  .paginadorTimeLine ul li a{
     background: #2E3192 !important;
     color: #FFF;
     border: none;
-    /* box-shadow: 0 1px 0 rgba(255,255,255,1), 0 0 2px rgba(0, 0, 0, 0.3) inset; */
+   box-shadow: none;
     cursor: default;
-        width: 37px;
-    height: 156px;
-    padding: 75px 0 0 0;
-    font-size: 35px;
+        width: 70px;
+    height: 30px;
+  text-decoration: none;
+      padding: 4px 0 0 0;
+    font-size: 24px;
     cursor: pointer;
+    
  }
-#contenerTimeLine .paginadorTimeLine ul li span.current{
+ .paginadorTimeLine ul li span.current{
     background: #666 !important;
     color: #FFF;
-    border: none;
-    /* box-shadow: 0 1px 0 rgba(255,255,255,1), 0 0 2px rgba(0, 0, 0, 0.3) inset; */
+    border: none !important;
+    box-shadow: none;
     cursor: default;
-        width: 37px;
-    height: 156px;
-    padding: 75px 0 0 0;
-    font-size: 35px;
+        width: 70px;
+    height: 30px;
+       padding: 4px 0 0 0;
+    text-decoration: none;
+    font-size: 24px;
    
  }

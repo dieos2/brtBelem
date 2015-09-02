@@ -11,10 +11,7 @@ $.get("_obrt.html", function (data) {
 
 });
 
-$.get("_timeline.html", function (data) {
-    $("#timeline").html(data);
 
-});
 $.get("index (3).html", function (data) {
     $("#conteudoTimeLine").html(data);
 
