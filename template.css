@@ -254,3 +254,15 @@ footer .redes { text-align:center; }
     width: 80%;
     height: 393px;
 }
+#enviar{
+    border: 1px solid;
+ border-color:  #fff;
+    cursor: pointer;
+        margin: 0 0 0 212px;
+    padding: 13px;
+    width: 84px;
+}
+#timelineNoticias input{
+    border: 1px solid;
+ border-color:  rgb(169, 169, 169);
+}
