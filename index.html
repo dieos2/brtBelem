@@ -253,7 +253,10 @@
             $(this).removeClass("active");
 
         });
-       
+        $(".paginadorTimeLine ul li a").on("click", function () {
+            debugger;
+            $(".paginadorTimeLine ul li:last-child").fadeOut();
+        })
         $(this).addClass("active");
         filtro = $(this).attr("data-filtro");
         jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=' + filtro + '&itens=6', "template", "corpoNoticias"); })

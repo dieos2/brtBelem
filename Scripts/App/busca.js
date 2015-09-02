@@ -178,7 +178,7 @@ function buscaAPITimeLine(urlB, temp, resu) {
                      onPageClick: function (page) {
                          jQuery.get(urlB + jQuery('#pesquisaForm').serialize() + '&page=' + page)
                              .done(function (d) {
-                                 debugger;
+                             
                                  if (pageAnterior < page) {
                                      jQuery("#" + resu).hide("slide", { direction: "left" }, 500);
                                  } else {
@@ -237,7 +237,7 @@ function buscaAPITimeLine(urlB, temp, resu) {
     });
 };
 function process(data, callback,temp, resu, page, pageAnterior) {
-    debugger;
+  
     var template = jQuery.templates("#"+temp);
     var html = template.render(data, { format: formataData,formataDataSemHora:formataDataSemHora, formataDatInternaTimeline: formataDatInternaTimeline, formatitulo: formataTituloParaLink, folder: formataPastaAudio, getMesData: getMesData, formaTexto: formataTextoParaHiperLink, formataDataTimeline: formataDataTimeline });
     
@@ -260,10 +260,10 @@ function process(data, callback,temp, resu, page, pageAnterior) {
     if (callback) {
         callback();
     }
-   
+ 
     setTimeout(
       function () { $(".paginadorTimeLine ul li:last-child").addClass("last-item") },
-        200);
+        20);
    
     MontaTimeLine();
 }
