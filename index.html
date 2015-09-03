@@ -43,7 +43,7 @@
         
         <div class="video_inicio">
         	<div class="video_texto container">
-	        	<a href="#" data-toggle="modal" data-target="#myModal"><img src="imagens/video_texto.png" class="img-responsive" /></a>
+	        	<a href="#" data-toggle="modal" data-target="#myModal"><img src="imagens/video_texto.png" class="img-responsive" width="500" /></a>
 
                   <!-- Modal -->
                   <div class="modal fade" id="myModal" role="dialog" tabindex="-1">
@@ -109,21 +109,24 @@
     <div id="noticias">
         <div class="container">
 
-            <div style="width: 100%;">
-                <h2 title="noticias" style="float: left;">NOTÍCIAS</h2>
+            <div class="row">
+			
+			<div class="col-xs-12">
+			
+                <h2 title="noticias" class="pull-left">NOTÍCIAS</h2>
              
+			 
+			 	<div id="paginador" class="pull-left">
+					<div class="paginacao">
+						<div class="paginadorSlider light-theme simple-pagination"><ul><li class="active"><span class="current prev">&lt;</span></li><li><a href="#page-2" class="page-link next">&gt;</a></li></ul></div>
 
-                <div class="categorias " style="float:right; margin: 26px 0 0 0;">
-                    <div id="paginador" class="categoria" style="margin: 0px 396px 0 0px;">
-                        <div class="paginacao col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="paginadorSlider light-theme simple-pagination"><ul><li class="active"><span class="current prev">&lt;</span></li><li><a href="#page-2" class="page-link next">&gt;</a></li></ul></div>
+					</div>
 
-                        </div>
+				</div>
+			 
 
-                    </div>
-                    <div data-filtro="BRTBelem" class="categoria active" style="
-    margin-top: 10px;
-">
+                <div class="categorias pull-right">
+                    <div data-filtro="BRTBelem" class="categoria active" >
                         <a href="#noticias">Todas</a>
                     </div>
 
@@ -140,8 +143,14 @@
                         <a href="#noticias">Trânsito</a>
                     </div>
                 </div>
+			</div>
+			
             </div>
-            <div title="noticias" id="corpoNoticias" class="row" style="margin-top: 101px">
+			
+			
+			
+			
+            <div title="noticias" id="corpoNoticias" class="row">
 
 
 
@@ -219,14 +228,17 @@
 </html>
 <script type="text/html" id="template">
   
-    <div class="col-sm-4 col-xs-12 ">
+    <div class="col-md-4 col-sm-6 col-xs-12 ">
 
         <a href="noticia.html?id={{:id_versao}}" target="">
-            <div style="margin-bottom: 30px">
-                <img src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}&maxHeight=240&maxWidth=360" class="img-responsive" style="height: 239px !important;" />
-
-           
-            </div><div style=" background: rgba(2, 2, 2, 0.62);width: 360px; height: 61px; overflow: hidden; padding: 10px; margin-top: -91px; color: #fff; display: inline-block;">{{:titulo}} [+]</div>
+            <div style="margin-bottom: 30px; ">
+                <img src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}&maxHeight=240&maxWidth=360" class="img-responsive hidden-xs" style="height: 239px !important; width:360px;" />
+				
+				<img src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}&maxHeight=240&maxWidth=360" class="img-responsive hidden-lg hidden-md hidden-sm" style="height: auto !important; width:100%;" />
+				
+				
+				<div style=" background: rgba(2, 2, 2, 0.62); width:100%; height: 80px; overflow: hidden; padding: 10px; margin-top: -80px; color: #fff; display: inline-block;">{{:titulo}} [+]</div>           
+            </div>
         </a>
 
     </div>

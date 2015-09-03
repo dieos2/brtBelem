@@ -55,7 +55,7 @@ header { overflow:hidden; }
     padding-right:0 !important;
 	overflow:visible !important;
 }
-.logo{    margin-left: 50px;}
+.logo{    }
 .menuHover{
     cursor: pointer;
 }
@@ -68,15 +68,37 @@ footer h2{
     color: #fff !important;
     margin-top: 7px;
 }
+footer input { border:1px solid #e3e3e3; }
 footer textarea{
     padding: 10px;
     margin: -7px 0 0 0px;
     width: 352px;
     height: 125px;
     float: left;
-    background-color: #5E5E5E;
-    color: #B0B0B0 !important;
+    background-color: #5e5e5e;
+    color: #b0b0b0 !important;
+	border:1px solid #e3e3e3;
 }
+/* placeholder contato */
+footer textarea::-webkit-input-placeholder , footer input::-webkit-input-placeholder {
+   color: #b0b0b0;
+}
+
+footer textarea::-webkit-input-placeholder , footer input::-webkit-input-placeholder:-moz-placeholder {
+   color: #b0b0b0;
+}
+
+footer textarea::-webkit-input-placeholder , footer input::-webkit-input-placeholder::-moz-placeholder {
+   color: #b0b0b0;  
+}
+
+footer textarea::-webkit-input-placeholder , footer input::-webkit-input-placeholder:-ms-input-placeholder {  
+   color: #b0b0b0;  
+}
+/* placeholder contato */
+
+footer #contato { font-weight:600 !important; font-size: 13px !important; }
+
 footer #nome{
      padding: 10px;
     background-color: #5E5E5E;
@@ -92,16 +114,19 @@ footer #email{
     margin: 0px 0px 11px 17px; 
 }
 footer a{
-    width: 209px;
-    height: 44px;
-    background-color: #1D1868;
-    color: #fff!important;
+    /* width: 209px; 
+    height: 44px; */
+    background-color: #000000;
+    color: #b0b0b0!important;
     font-size: 15px;
     font-weight: bold;
     /* float: right; */
     padding: 5px 12px 5px 12px;
     margin: 0px 0 0 213px;
 }
+
+
+
 .botao_menu .dropdown-menu {
 	max-width:100%;
 	width:650px;
@@ -165,8 +190,14 @@ footer a{
 #noticias { background:#fff; padding:50px 0 70px; }
 #noticias a { color:#1d1868; }
 #noticias .item { margin:15px auto; }
+#noticias .item img { height:239px !important;  }
 #noticias .noticia { max-width:460px; margin:15px auto; background:#fcedaa; }
 #noticias .noticia p { padding:10px; color:#000 !important; }
+
+#noticias .categorias { display:inline-block;     margin-top: 5px; }
+#noticias .categorias .categoria { float:left; margin-right:14px; font-weight:700; text-transform:uppercase; font-size:16px; letter-spacing:-1px;     margin-top: 10px; }
+
+#corpoNoticias { margin-top: 35px; }
 
 
 
@@ -177,8 +208,10 @@ footer a{
 
 /* notícias - página */
 .noticias { background:url(imagens/noticias_topo.jpg) top center no-repeat; }
-#noticias h2 { background:url(imagens/iconNews.png) top left no-repeat; padding-left:62px; padding-top:17px; padding-bottom:20px; font-size:30px !important; }
+#noticias h2 { background:url(imagens/iconNews.png) top left no-repeat; padding-left:70px; padding-top:10px; padding-bottom:20px; font-size:30px !important; padding-right:20px; display:inline-block; margin-top:-2px;	 }
 .tecnologia {background:url(imagens/tecnologia_topo.jpg) top center no-repeat; }
+/* linha do tempo - página */
+.timeline { background:url(imagens/linhadotempo_topo.jpg) top center no-repeat; }
 /* multimídia - página */
 .multimidia { background:url(imagens/multimidia_topo.jpg) top center no-repeat; }
 .cenarioatual { background:url(imagens/cenarioatual_topo.jpg) top center no-repeat; }
@@ -203,14 +236,14 @@ a:hover { text-decoration:none !important; }
 #timeline .item { height:236px; }
 #timeline .item img {  position:absolute; }
 #timeline .item p { color:#1d1868; font-size:15px; min-height: 63px;}
-#timeline .item span {top: 107%;    position: absolute;margin:0 0 0 33%;    font-weight: bold;}
+#timeline .item span {top: 111%;    position: absolute;margin:0 0 0 33%;    font-weight: bold;}
 #timeline .leiamais { position:absolute; top:40%; }
 .leiamais { margin:15px auto; }
 .leiamais a { border:2px solid #1d1868; color:#1d1868; padding:2px 25px 2px 10px; text-transform:uppercase; font-size:14px; }
 .leiamais a:hover { text-decoration:none; background:#1d1868; color:#fff; }
 
 #timeline .linha { height:5px; background:#1d1868; }
-#timeline .marcador { border-radius: 50%; position:absolute; top:97.3%; left:45%; width:24px; height:24px; background:#1d1868; border:3px solid #fff; }
+#timeline .marcador { border-radius: 50%; position:absolute; top:92.3%; left:44%; width:40px; height:40px; background:#1d1868; border:3px solid #fff; }
 
 
 .conteudo { background:#ffd105; overflow:hidden; padding:20px 0 30px; }
@@ -219,9 +252,10 @@ a:hover { text-decoration:none !important; }
 .conteudo .row h2 { text-transform:none !important; padding-right:10%; letter-spacing:-1px; margin:40px auto 15px; /* font-family: 'Open Sans Condensed', sans-serif; */ }
 .conteudo .row img { margin:10px auto; }
 .conteudo .row a:hover { text-decoration:none !important; }
+.conteudo.noticia {     margin-top: 50px; }
 
-.categorias { display:inline-block; }
-.categorias .categoria { float:left; margin-right:14px; font-weight:700; text-transform:uppercase; font-size:16px; letter-spacing:-1px; }
+.categorias { display:inline-block;  }
+.categorias .categoria { float:left; margin-right:14px; font-weight:700; text-transform:uppercase; font-size:16px; letter-spacing:-1px;     margin-top: 10px; }
 .categoria.active a { border:2px solid #1d1868; color:#1d1868; color: #fff !important; background-color: #1d1868;  }
 .categoria a { color:#656363; padding:1px 10px 1px 7px; border:2px solid #ffd105; }
 .categoria a:hover { text-decoration:none; background:#1d1868; color:#fff !important; border:2px solid #1d1868;  }
@@ -231,7 +265,7 @@ a:hover { text-decoration:none !important; }
 
 
 /* rodape */
-footer { background:url(imagens/rodape_fundo.jpg) top center no-repeat; height:207px; }
+footer { background:url(imagens/rodape_fundo.jpg) top center no-repeat; min-height:207px; padding:20px 0 30px !important; background-size:100% 100%; }
 footer .redes { text-align:center; }
 
 /* rotativo */
@@ -256,18 +290,23 @@ footer .redes { text-align:center; }
     height: 393px;
 }
 #enviar{
-    border: 1px solid;
- border-color:  #fff;
+    border: 1px solid #b2b2b2;
     cursor: pointer;
-        margin: 0 0 0 212px;
-  padding: 11px 13px;
-    width: 84px;
+        margin: 0 0 0 129px;
+  padding: 7px 55px;
+  display: inline-block; 
+    /* width: 84px; */
 }
 #timelineNoticias input {
     border: 1px solid;
     border-color: rgb(169, 169, 169);
 }
 
+
+#paginador  { 
+	display:inline-block;  
+	
+}
 #paginador ul li span, #paginador ul li a {
   border:2px solid #1d1868; color:#1d1868;  
   color:#656363; padding:1px 10px 1px 7px; border:2px solid #ffd105;
