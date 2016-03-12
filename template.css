@@ -41,11 +41,14 @@ header { overflow:hidden; }
 
 
 .botao_menu { margin-top:11px; }
-.botao_menu .texto { font-size:22px; margin-top:2px; margin-right:5px; font-weight: bold }
-.botao_menu .glyphicon-menu-hamburger { font-size:31px;  }
-.botao_menu a { color:#1d1868; }
-.botao_menu a .glyphicon-menu-hamburger { color:#2e3192; }
-.video_inicio { height:702px; margin-top:-20px; background:url(imagens/video_fundo.jpg) top center no-repeat;  }
+.dropdown-toggle:hover{
+    color: #fff;
+}
+.botao_menu .texto { font-size:16px; margin-top:2px; margin-right:5px; font-weight: bold }
+.botao_menu .glyphicon-menu-hamburger { font-size:25px;  }
+.botao_menu a { color:#fff; }
+.botao_menu a .glyphicon-menu-hamburger { color:#fff; }
+.video_inicio {     height: 768px; margin-top:-20px; background:url(imagens/video_fundo.jpg) top center no-repeat;  }
 .modal-content { background:#000 !important; }
 .modal-footer { border-top:none !important; }
 .video_texto { padding-top:184px; }
@@ -342,4 +345,14 @@ footer .redes { text-align:center; }
     text-decoration: none;
     font-size: 24px;
    
+ }
+ .posContainer{
+         width: 100%;
+    background-color: #153F7B;
+    /* float: right; */
+    position: absolute;
+    top: 0;
+    z-index: 100000;
+    left: 1257px;
+    height: 68px;
  }

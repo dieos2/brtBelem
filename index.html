@@ -6,13 +6,13 @@
 
     <style type="text/css">
         @import "template.css";
-         @import "css/simplePagination.css"
+        @import "css/simplePagination.css";
     </style>
     <link rel="SHORTCUT ICON" href="http://agenciabelem.com.br/especial/imagens/favicon.png" type="image/x-icon" />
     <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
     <link href="css/smoothness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
     <link href="css/hover-min.css" rel="stylesheet" />
-
+    <link href="css/everslider.css" rel="stylesheet" />
    
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
@@ -24,12 +24,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="Scripts/jsrender.min.js"></script>
     <script src="Scripts/App/busca.js"></script>
-
+    <script src="Scripts/jquery.everslider.min.js"></script>
     <script src="Scripts/jquery-ui-1.10.4.min.js"></script>
     <script src="Scripts/jquery.mask.min.js"></script>
     <script src="Scripts/jquery.ui.datepicker.js"></script>
     <script src="Scripts/jquery.simplePagination.js"></script>
-   
+
+    <script src="Scripts/jquery.mousewheel.js"></script>
  
 </head>
 
@@ -42,8 +43,18 @@
         </div>
         
         <div class="video_inicio">
+            <div id="mycarousel" class="everslider" style="top: 87px">
+                <ul class="es-slides">
+                    <li><div><a href="#" data-toggle="modal" data-target="#myModal" style="position: absolute;
+    margin-top: 40px;"><img src="imagens/video_texto.png" class="img-responsive" width="500" /></a><img src="/imagens/image1.jpg" alt="" /></div></li>
+                    <li><img src="/imagens/image2.jpg" alt="" /></li>
+
+                    <li><img src="/imagens/image3.jpg" alt="" /></li>
+                </ul>
+            </div>
         	<div class="video_texto container">
-	        	<a href="#" data-toggle="modal" data-target="#myModal"><img src="imagens/video_texto.png" class="img-responsive" width="500" /></a>
+                
+	        	
 
                   <!-- Modal -->
                   <div class="modal fade" id="myModal" role="dialog" tabindex="-1">
@@ -95,11 +106,7 @@
     
     
     <!-- O BRT - in -->
-    <div id="o_brt">
-    	
-     
-        
-    </div>
+    
     <!-- o BRT - out -->
     
     
@@ -313,7 +320,33 @@
 </script>
 <script src="Scripts/main.js"></script> <!-- Resource jQuery -->
 <script src="Scripts/script.js"></script>
-
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#mycarousel').everslider({
+            mode: 'carousel',
+            maxVisible: 1,                      // show only N slides (overrides maxWidth, 0 to ignore)  
+            moveSlides: 1,
+            itemWidth: 1343, 
+            itemHeight: 900,
+            mouseWheel: false,
+            navigation: false,
+            ticker: true,
+            tickerAutoStart: true,
+            tickerHover: true,
+            tickerTimeout: 3000,
+            fadeDelay: 2000,                     // fade effect delay, ms  
+            fadeDuration: 2000,                  // fade effect duration, ms  
+            slideEasing: 'fade',
+            slidesReady: function () {
+                debugger;
+                var carousel = $('#mycarousel').data('everslider');
+                carousel.tickerPlay();
+            },
+        });
+       
+    });
+</script>
+  
 <script type="text/javascript">
     //
     // YouTube JavaScript API Player With Playlist
@@ -331,6 +364,7 @@
     // -- ytplayer_playlist: an array containing YouTube Video IDs
     // -- ytplayer_playitem: index of the video to be played at any given time
     //
+
     var ytplayer_playlist = [];
     var ytplayer_playitem = 0;
     swfobject.addLoadEvent(ytplayer_render_player);

@@ -206,7 +206,7 @@
         filtro = $(this).attr("data-filtro");
         jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=' + filtro + '&', "template", "conteudo"); })
     })
-    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=BRTBelem&', "template", "conteudo"); })
+    jQuery(function () { var a = buscaAPI('http://localhost:8882/Api/Noticia/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=&status=3&', "template", "conteudo"); })
 </script>
 <script src="Scripts/main.js"></script> <!-- Resource jQuery -->
 <script src="Scripts/script.js"></script>
