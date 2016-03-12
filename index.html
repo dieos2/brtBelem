@@ -331,7 +331,8 @@
             mode: 'carousel',
             maxVisible: 1,                      // show only N slides (overrides maxWidth, 0 to ignore)  
             moveSlides: 1,
-            itemWidth: 1343, 
+            itemWidth: 1343,
+            effect: 'fade',
             itemHeight: 900,
             mouseWheel: false,
             navigation: false,
@@ -342,6 +343,8 @@
             fadeDelay: 2000,                     // fade effect delay, ms  
             fadeDuration: 2000,                  // fade effect duration, ms  
             slideEasing: 'fade',
+            syncHeightDuration: 200,            // carousel height sync duration, ms  
+            syncHeightEasing: 'fade',
             slidesReady: function () {
                 debugger;
                 var carousel = $('#mycarousel').data('everslider');
