@@ -205,12 +205,13 @@
                 <div id="timelineNoticias" class="row" style="
     margin-top: 106px;
 ">
+                  
+                        <ul class="es-slides"></ul>
 
-                 
+
+                    </div>
 
                 </div>
-
-            </div>
             <div class="linha">
             </div>
 
@@ -260,18 +261,18 @@
 
 <script type="text/html" id="templateTimeLine">
   
-    <div class="col-md-3 col-sm-4 col-xs-6">
-        <div class="item">
-            <a href="noticia.html?id={{:id_versao}}">
-                <p>{{:titulo}} [+]</p>
+        <div class="col-md-3 col-sm-4 col-xs-6">
+            <div class="item">
+                <a href="noticia.html?id={{:id_versao}}">
+                    <p>{{:titulo}} [+]</p>
 
-                <img src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}&maxHeight=163&maxWidth=270" class="" width="270" height="163" />
-            </a>
-            <div class="marcador"></div>
-            <span>{{:~formataDataSemHora(data_pub)}}</span>
+                    <img src="http://www.agenciabelem.com.br/Resize/CreateThumbnail?path=/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}&maxHeight=163&maxWidth=270" class="" width="270" height="163" />
+                </a>
+                <div class="marcador"></div>
+                <span>{{:~formataDataSemHora(data_pub)}}</span>
+            </div>
         </div>
-    </div>
-  
+   
 </script>
 <script>
    
