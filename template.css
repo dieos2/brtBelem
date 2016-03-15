@@ -249,13 +249,14 @@ a:hover { text-decoration:none !important; }
 #timeline .marcador { border-radius: 50%; position:absolute; top:92.3%; left:44%; width:40px; height:40px; background:#1d1868; border:3px solid #fff; }
 
 
-.conteudo { background:#ffd105; overflow:hidden; padding:20px 0 30px; }
+.conteudo { background: #717171; overflow:hidden; padding:20px 0 30px; color: #fff }
 .conteudo h2 { display:inline-block; margin-right:50px; }
-.conteudo p { font-size:14px; color:#1d1868; text-align:justify; margin:20px auto; }
+.conteudo p { font-size:16px; color:#fff; text-align:justify; margin:20px auto; }
 .conteudo .row h2 { text-transform:none !important; padding-right:10%; letter-spacing:-1px; margin:40px auto 15px; /* font-family: 'Open Sans Condensed', sans-serif; */ }
 .conteudo .row img { margin:10px auto; }
 .conteudo .row a:hover { text-decoration:none !important; }
 .conteudo.noticia {     margin-top: 50px; }
+.conteudo h3{color: #fff !important }
 
 .categorias { display:inline-block;  }
 .categorias .categoria { float:left; margin-right:14px; font-weight:700; text-transform:uppercase; font-size:16px; letter-spacing:-1px;     margin-top: 10px; }
