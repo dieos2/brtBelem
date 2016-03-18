@@ -357,3 +357,7 @@ footer .redes { text-align:center; }
     left: 1257px;
     height: 68px;
  }
+.divImagemInterna{
+        float: right;
+    margin: 15px;
+}
