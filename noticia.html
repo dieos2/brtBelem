@@ -30,7 +30,7 @@
     <script src="Scripts/jquery.mask.min.js"></script>
     <script src="Scripts/jquery.ui.datepicker.js"></script>
     <script src="Scripts/jquery.simplePagination.js"></script>
-
+    <script src="Scripts/App/Compartilhar.js"></script>
 <script type="text/javascript">
 
 
@@ -122,7 +122,13 @@
 
                 <p>
                     <b>COMPARTILHE</b>
-                    <a href="javascript: void(0);" onclick="window.open('http://www.facebook.com/sharer.php?u=http://agenciabelem.com.br','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');" target="_blank" title="Compartilhar no Facebook"><img src="imagens/share_facebook.png" /></a><a href="http://twitter.com/share?text=Noticia BRT - Belém&amp;url=http://agenciabelem.com.br&amp;hashtags=AgenciaBelem,BRT" title="Compartilhar no Twitter" rel="nofollow" target="_blank"><img src="imagens/share_twitter.png" /></a><a href="whatsapp://send?text=http://agenciabelem.com.br/especial/brt.html" data-text="Bem Entendido - BRT" data-href="http://agenciabelem.com.br/especial/brt.html" title="Funciona apenas na versão mobile"><img src="imagens/share_whatsapp.png" /></a>
+                    <a href="#" onclick="compartilhaFaceBook(this)" data-image="http://www.agenciabelem.com.br/multimidiaSGN/galeria/{{:id_galeria}}/{{:nome_foto}}" data-title="{{:titulo}}" data-desc="{{:chapeu}}" data-link="http://www.agenciabelem.com.br/brtbelem/noticia.html?id={{:id_versao}}" class="fb_share"><img src="/Imagens/topo_fb2.png" /></a>
+                    <a href="https://twitter.com/intent/tweet?hashtags=;original_referer=http://www.agenciabelem.com.br/brtbelem/noticia.html?id={{:id_versao}};ref_src=http://www.agenciabelem.com.br/brtbelem/noticia.html?id={{:id_versao}};related=;text=;tw_p=;url=http://www.agenciabelem.com.br/brtbelem/noticia.html?id={{:id_versao}};via=prefeiturabelem" class="" id=""><i></i><span class="label" id="l"><img src="/Imagens/topo_twitter2.png" /></span></a>
+
+                    <a href="https://plus.google.com/share?url=http://www.agenciabelem.com.br/brtbelem/noticia.html?id={{:id_versao}}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                        <img src="/Imagens/topo_gplus2.png" />
+                    </a>
+                    <!--<a href="javascript: void(0);" onclick="window.open('http://www.facebook.com/sharer.php?u=http://agenciabelem.com.br','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');" target="_blank" title="Compartilhar no Facebook"><img src="imagens/share_facebook.png" /></a><a href="http://twitter.com/share?text=Noticia BRT - Belém&amp;url=http://agenciabelem.com.br&amp;hashtags=AgenciaBelem,BRT" title="Compartilhar no Twitter" rel="nofollow" target="_blank"><img src="imagens/share_twitter.png" /></a><a href="whatsapp://send?text=http://agenciabelem.com.br/especial/brt.html" data-text="Bem Entendido - BRT" data-href="http://agenciabelem.com.br/especial/brt.html" title="Funciona apenas na versão mobile"><img src="imagens/share_whatsapp.png" /></a>-->
                 </p>
 
 
