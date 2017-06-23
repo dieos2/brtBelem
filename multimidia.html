@@ -251,21 +251,23 @@
 
 </script>
 <script>
-    jQuery(".abreModal").click(function () {
-        debugger;
-        $("#midia" + $(this).attr("data-target")).modal();
-    });
-    jQuery(".categoria").click(function () {
-        debugger;
-        $(".categoria").each(function (i) {
-            $(this).removeClass("active");
-
+    $(function () {
+        jQuery(".abreModal").click(function () {
+            debugger;
+            $("#midia" + $(this).attr("data-target")).modal();
         });
-        $(this).addClass("active");
-        filtro = $(this).attr("data-filtro");
-        jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/' + filtro + '/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=BRTBelem&', "template", "conteudo"); })
-    })
-    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/video/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=BRTBelem&itens=8', "template", "conteudo"); })
+        jQuery(".categoria").click(function () {
+            debugger;
+            $(".categoria").each(function (i) {
+                $(this).removeClass("active");
+
+            });
+            $(this).addClass("active");
+            filtro = $(this).attr("data-filtro");
+            jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/' + filtro + '/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=BRTBelem&', "template", "conteudo"); })
+        })
+    });
+    jQuery(function () { var a = buscaAPI('http://api.sgn.net.br/Api/video/3?dataIni=&dataFim=&idOrgao=&termo=&filtro=BRTBelem&itens=8', "template", "conteudo"); });
 </script>
 <script src="Scripts/main.js"></script> <!-- Resource jQuery -->
 <script src="Scripts/script.js"></script>
