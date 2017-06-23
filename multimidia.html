@@ -201,7 +201,7 @@
     {{if id_Foto == null}}
     <div class="col-md-3 col-xs-6 " style="height:260px">
 
-        <a href="#" data-toggle="modal" data-target="midia{{:id}}">
+        <a href="#" data-toggle="modal" class="abreModal" data-target="midia{{:id}}">
             <div class="midia">
                 <img src='http://img.youtube.com/vi/{{:codigo}}/0.jpg' class="img-responsive" />
                 <img src="imagens/botao_play.png" class="img-responsive" style="position:absolute; top:0; left:0;" />
@@ -251,6 +251,9 @@
 
 </script>
 <script>
+    jQuery(".abreModal").click(function () {
+        $("#midia" + $(this).attr("data-target")).modal();
+    })
     jQuery(".categoria").click(function () {
         debugger;
         $(".categoria").each(function (i) {
